@@ -145,10 +145,10 @@ If an inventory is lacking or too far removed in time from 2000 (>10 years away)
 based on satellite imagery from 2000. If neither of these approaches are taken, all glaciers in that region are flagged 
 as ‘not assigned’ terminus type (term_type = 9).
 
-<span style="color:red">Important note:</span> When in doubt, put the glacier in the lower number connectivity level 
-(i.e., higher relevance; Level 2 instead of Level 3).
+> :warning: **Important note: When in doubt, put the glacier in the lower number connectivity level 
+(i.e., higher relevance; Level 2 instead of Level 3).**
 
-<span style="color:red">Important note:</span> **If you reviewed a glacier or region and determined that certain glaciers 
+> :warning: **Important note: If you reviewed a glacier or region and determined that certain glaciers 
 are definitely NOT lake-terminating (Level 0), please indicate that on your data submission (Section 3). A list that 
 includes exclusively glaciers that are definitely not lake-terminating is helpful in its own right.**
 
@@ -187,7 +187,7 @@ levels, based on the examples above and the following general criteria:
   clouds, snow cover, cast shadow), use the "not assigned" category (`term_type`=9)
 - Recall that a list of definitively not lake-terminating glacier (lake level = 0) is very useful in its own right
 
-**We strongly urge contributors to use the 0 - 3 lake-terminating level categories defined above**, but will accept 
+> :warning: **We strongly urge contributors to use the 0 - 3 lake-terminating level categories defined above**, but will accept 
 binary submissions ("lake-terminating"/"not lake-terminating") as well. If you are performing a binary lake-terminating 
 classification, please consider the above-defined Levels 1 & 2 as “yes”, and 
 **please make it clear in your contribution that you did a binary classification**.
@@ -221,7 +221,7 @@ The fields are defined as:
 - `contributor`: The name of the person(s) who checked the lake-terminating level. More than one person may be included
   here, but the person who checked the level must be named, and not just the supervisor or data provider.
 
-As stated above, **we strongly urge contributors to use the 0 - 3 lake-terminating level categories defined above**, but
+> :warning: As stated above, **we strongly urge contributors to use the 0 - 3 lake-terminating level categories defined above**, but
 we are happy to accept binary submissions as well. **If you are performing a binary lake-terminating classification, 
 please consider the above-defined Levels 1 & 2 as "yes", and please make it clear in your contribution that you did 
 a binary classification**.
