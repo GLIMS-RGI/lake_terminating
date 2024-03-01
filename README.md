@@ -8,7 +8,7 @@ the lakes increase glacier mass loss due to calving, dynamic thinning and increa
 (e.g., King et al. 2019; Tsutaki et al. 2011; 2019; Pronk et al. 2021). Moreover, they impact geodetic mass balance 
 calculations as satellites cannot measure subaqueous mass loss (Zhang et al. 2023).
 
-### motivation
+### Motivation
 
 The main aim of this effort is to determine whether a glacier is lake-terminating for the general attribute table
 of the Randolph Glacier Inventory (RGI). Uncertain (in case the existence is possible but cannot be determined due to 
@@ -148,9 +148,9 @@ as ‘not assigned’ terminus type (term_type = 9).
 <span style="color:red">Important note:</span> When in doubt, put the glacier in the lower number connectivity level 
 (i.e., higher relevance; Level 2 instead of Level 3).
 
-<span style="color:red">Important note:</span> If you reviewed a glacier or region and determined that certain glaciers 
+<span style="color:red">Important note:</span> **If you reviewed a glacier or region and determined that certain glaciers 
 are definitely NOT lake-terminating (Level 0), please indicate that on your data submission (Section 3). A list that 
-includes exclusively glaciers that are definitely not lake-terminating is helpful in its own right.
+includes exclusively glaciers that are definitely not lake-terminating is helpful in its own right.**
 
 ### Workflow using existing lake inventory
 
