@@ -157,7 +157,7 @@ includes exclusively glaciers that are definitely not lake-terminating is helpfu
 We have provided a Python script (`assignRgiLakeFlag_minimal.py`, included in the `scripts` folder) that utilizes an existing ice-marginal 
 lake inventory to produce a limited subset of RGI glaciers that should be manually verified for lake-terminating status.
 
-We have compiled a list of known [datasets here]([https://github.com/GLIMS-RGI/lake_terminating/blob/main/Lake_databases_termini.csv]).
+We have compiled a list of known [datasets here](https://github.com/GLIMS-RGI/lake_terminating/blob/main/Lake_databases_termini.csv).
 
 The general workflow implemented in the script is:
 
