@@ -5,7 +5,7 @@ Jakob Steiner, and Will Kochtitzky
 
 Knowledge about the existence of lakes which are in contact with glaciers is a fundamental importance to understand as
 the lakes increase glacier mass loss due to calving, dynamic thinning and increased mass loss at the ice-water interface
-(e.g., King et al. 2019; Tsutaki et al. 2011; 2019; Pronk et al. 2021). Moreover, they impact geodetic mass balance 
+(e.g., King et al. 2019; Tsutaki et al. 2011; 2019; Pronk et al. 2021; Main et a., 2023). Moreover, they impact geodetic mass balance 
 calculations as satellites cannot measure subaqueous mass loss (Zhang et al. 2023).
 
 ### Motivation
@@ -236,6 +236,7 @@ and/or Tobias Bolch ([tobias.bolch@tugraz.at](mailto:tobias.bolch@tugraz.at)) wi
 
 - King, Owen, Atanu Bhattacharya, Rakesh Bhambri, and Tobias Bolch. 2019. “Glacial Lakes Exacerbate Himalayan Glacier Mass Loss.” 
   *Scientific Reports* 9(1), 18145. https://doi.org/10.1038/s41598-019-53733-x
+- Main, Brittany, Luke Copland, Braden Smeda, Will Kochtitzky, Sergey Samsonov, Jonathan Dudley, Mark Skidmore et al. 2023. "Terminus change of Kaskawulsh Glacier, Yukon, under a warming climate: retreat, thinning, slowdown and modified proglacial lake geometry." *Journal of Glaciology* 69(276):936-952. https://doi.org/10.1017/jog.2022.114
 - Pronk, Jan Bouke, Tobias Bolch, Owen King, Bert Wouters, and Douglas I. Benn. 2021. "Contrasting Surface Velocities between Lake- and Land-Terminating Glaciers in the Himalayan Region."
   *The Cryosphere* 15(12), 5577–99. https://doi.org/10.5194/tc-15-5577-2021
 - Rastner, P., Bolch, T., Mölg, N., Machguth, H., Le Bris, R., Paul, F., 2012. "The first complete inventory of the local glaciers and ice caps on Greenland". 
