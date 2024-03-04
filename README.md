@@ -3,6 +3,8 @@
 Written by William Armstrong and Tobias Bolch with contributions from Robert McNabb, Rodrigo Aguayo, Fabien Maussion, 
 Jakob Steiner, and Will Kochtitzky
 
+Introductory zoom call where we introduce our main objectives of this work discuss this framework is available here:  https://une.zoom.us/rec/share/vGTjgvBWwBtk3-25jqEh7JCZQtDQEgWg0MZvh3XTHxFyMNR3F3yphsN1FZPwk_kD.HtXAJMD-WNDgmdCX
+
 Knowledge about the existence of lakes which are in contact with glaciers is a fundamental importance to understand as
 the lakes increase glacier mass loss due to calving, dynamic thinning and increased mass loss at the ice-water interface
 (e.g., King et al. 2019; Tsutaki et al. 2011; 2019; Pronk et al. 2021; Main et a., 2023). Moreover, they impact geodetic mass balance 
