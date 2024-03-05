@@ -54,7 +54,14 @@ def main():
                             right_df=lake_outlines,
                             how='inner')
 
-    outlines_nobuff = outlines.copy()
+    outlines_nobuff = outlines[['geometry', 'rgi_id', 'term_type']].copy()
+    outlines_nobuff['lake_level'] = ''
+    outlines_nobuff['img_id'] = ''
+    outlines_nobuff['img_date'] = ''
+    outlines_nobuff['inv_doi'] = ''
+    outlines_nobuff['cont'] = ''
+    outlines_nobuff['notes'] = ''
+
     # only want to change term_type if it hasn't been set (i.e., equal to 9)
     outlines_nobuff.loc[(outlines.index.isin(join_nobuff.index)) & (outlines.term_type == 9), 'term_type'] = 2
     outlines_nobuff.to_file(f"{args.rgi_region}_lakeflag_nobuffer.shp")
@@ -64,11 +71,19 @@ def main():
                           right_df=lake_outlines,
                           how='inner')
 
-    outlines_buff = outlines.copy()
+    outlines_buff = outlines[['geometry', 'rgi_id', 'term_type']].copy()
+    outlines_buff['lake_level'] = ''
+    outlines_buff['img_id'] = ''
+    outlines_buff['img_date'] = ''
+    outlines_buff['inv_doi'] = ''
+    outlines_buff['cont'] = ''
+    outlines_buff['notes'] = ''
+
     # only want to change term_type if it hasn't been set (i.e., equal to 9)
-    outlines_nobuff.loc[(outlines.index.isin(join_nobuff.index)) & (outlines.term_type == 9), 'term_type'] = 2
+    outlines_buff.loc[(outlines.index.isin(join_nobuff.index)) & (outlines.term_type == 9), 'term_type'] = 2
     outlines_buff.to_file(f"{args.rgi_region}_lakeflag_{args.buffer}m_buffer.shp")
 
 
 if __name__ == "__main__":
     main()
+
