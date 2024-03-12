@@ -41,17 +41,17 @@ library(sf)
 ##################
 
 flagContrib <- 'Steiner' # surname/identifier of contributor
-termDefinition <- 'terminus'    # specify if you want to use the location of the terminus in RGI ('terminus') or the centroid ('centroid') of the glacier to build a search radius 
+termDefinition <- 'centroid'    # specify if you want to use the location of the terminus in RGI ('terminus') or the centroid ('centroid') of the glacier to build a search radius 
 
-path_rgi <- 'C:\\Work\\GeospatialData\\RGI70\\RGI2000-v7.0-G-11_central_europe\\' # path for RGI inventory
-file_rgi <- 'RGI2000-v7.0-G-11_central_europe.shp'                                # RGI file name
+path_rgi <- 'C:\\Work\\GeospatialData\\RGI70\\RGI2000-v7.0-G-14_asia_south_west\\' # path for RGI inventory
+file_rgi <- 'RGI2000-v7.0-G-14_asia_south_west.shp'                                # RGI file name
 
-path_lakes <- 'C:\\Work\\Research\\RGI7\\LakeTermini\\LakeInventories\\Alps\\Switzerland\\SwissAlps_lakes_2006_2016\\'  # path for lake inventory
-file_lakes <- 'lakes_2006_dsv.shp'                                    # lake file name
-DOI_lakes <- 'https://doi.org/10.1594/PANGAEA.934190'                 # DOI of lake inventory
+path_lakes <- 'C:\\Work\\Research\\RGI7\\LakeTermini\\LakeInventories\\HMA\\RGI14\\'  # path for lake inventory
+file_lakes <- 'High_Asia_glacial_lake_1990.shp'                                    # lake file name
+DOI_lakes <- 'https://doi.org/10.5194/essd-12-2169-2020'                 # DOI of lake inventory
 
 # template to fill with all glacier and terminus data (follow original template format in csv!)
-outputfile <- 'C:\\Work\\Research\\RGI7\\LakeTermini\\lake_term_data_RGI11.csv' # csv file to be filled with initial flags
+outputfile <- 'C:\\Work\\Research\\RGI7\\LakeTermini\\lake_term_data_RGI14.csv' # csv file to be filled with initial flags
 
 ##################
 # read and intersect lakes with termini
@@ -66,10 +66,9 @@ lakefile <- ogrInfo(paste(path_lakes,file_lakes,sep = ""))
 lakefile <- readOGR(dsn=paste(path_lakes,file_lakes,sep = ""))
 lakefile <- spTransform(lakefile,crs(RGIfile))
 
-# crop RGI to AOI with lakes
-RGI_cropped <- raster::crop(RGIfile,extent(lakefile))
-
-
+# crop RGI to AOI with lakes                                    ! change manually if lake inventory much smaller/larger than RGI extent
+#RGI_cropped <- raster::crop(RGIfile,extent(lakefile))
+RGI_cropped <- RGIfile
 
 vecLakeTerm <- vector()
 
@@ -82,7 +81,7 @@ if(termDefinition=='centroid'){
 
 for(i in 1:length(RGI_cropped)){
 terminusCoord_utm  <- st_transform(st_sfc(st_point(terminusCoord[i,]), crs = 4326), "+proj=utm +zone=32")    # change UTM zone here if necessary
-circle <- st_buffer(terminusCoord_utm, 2000) # potentially alter radius around terminus (in m)
+circle <- st_buffer(terminusCoord_utm, bufferR) # radius around terminus or centroid (in m)
 circle <- st_transform(circle, crs = crs(lakefile))
 circle_SPDF <- as(circle, 'Spatial')
 if(length(which(unlist(st_intersects(circle, st_as_sf(lakefile), sparse = F))=='TRUE'))>0){
