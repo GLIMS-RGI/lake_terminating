@@ -15,6 +15,10 @@
 #         RGI region inventory (.shp)
 #         lake inventory for the same region or a subset of the region (.shp)
 #
+# Output: 
+#         csv file with flags for all glaciers with no lake in vicinity and those with potentially a terminus lake
+#         shp file of all RGI7 glaciers that could have a terminus lake for further manual checking 
+#
 # Created:          2024/02/15
 # Latest Revision:  2024/03/13
 #
