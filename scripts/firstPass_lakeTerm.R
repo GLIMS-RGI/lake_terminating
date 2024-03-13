@@ -5,7 +5,7 @@
 #
 # ReadMe: 
 # This code does something similar as the python example (see https://github.com/GLIMS-RGI/lake_terminating/tree/main/scripts). It uses the RGI outlines, 
-# draws a buffer around the terminus (r=2000 m) or if that is not available in RGI (as for HMA for example) the centroid (r=15 000 m)
+# draws a buffer around the terminus (r=1000 m) or if that is not available in RGI (as for HMA for example) the centroid (r=15 000 m)
 # 
 #
 # Input:  
@@ -16,7 +16,7 @@
 #         lake inventory for the same region or a subset of the region (.shp)
 #
 # Created:          2024/02/15
-# Latest Revision:  2024/02/16
+# Latest Revision:  2024/03/13
 #
 # Jakob Steiner | jakob.steiner@uni-graz.at | fidelsteiner.github.io 
 ################################################################################
@@ -41,17 +41,20 @@ library(sf)
 ##################
 
 flagContrib <- 'Steiner' # surname/identifier of contributor
-termDefinition <- 'centroid'    # specify if you want to use the location of the terminus in RGI ('terminus') or the centroid ('centroid') of the glacier to build a search radius 
+termDefinition <- 'terminus'    # specify if you want to use the location of the terminus in RGI ('terminus') or the centroid ('centroid') of the glacier to build a search radius 
 
-path_rgi <- 'C:\\Work\\GeospatialData\\RGI70\\RGI2000-v7.0-G-14_asia_south_west\\' # path for RGI inventory
-file_rgi <- 'RGI2000-v7.0-G-14_asia_south_west.shp'                                # RGI file name
+path_rgi <- 'C:\\Work\\GeospatialData\\RGI70\\RGI2000-v7.0-G-11_central_europe\\' # path for RGI inventory
+file_rgi <- 'RGI2000-v7.0-G-11_central_europe.shp'                                # RGI file name
 
-path_lakes <- 'C:\\Work\\Research\\RGI7\\LakeTermini\\LakeInventories\\HMA\\RGI14\\'  # path for lake inventory
-file_lakes <- 'High_Asia_glacial_lake_1990.shp'                                    # lake file name
-DOI_lakes <- 'https://doi.org/10.5194/essd-12-2169-2020'                 # DOI of lake inventory
+path_lakes <- 'C:\\Work\\Research\\RGI7\\LakeTermini\\LakeInventories\\Alps\\Switzerland\\SwissAlps_lakes_2006_2016\\'  # path for lake inventory
+file_lakes <- 'lakes_2006_dsv.shp'                                    # lake file name
+DOI_lakes <- 'https://doi.org/10.1594/PANGAEA.934190'                 # DOI of lake inventory
+
+# file name for subset RGI with all glaciers that possibly have a lake
+RGI_manipulated <- 'C:\\Work\\Research\\RGI7\\LakeTermini\\RGI11_subset_Switzerland.shp'
 
 # template to fill with all glacier and terminus data (follow original template format in csv!)
-outputfile <- 'C:\\Work\\Research\\RGI7\\LakeTermini\\lake_term_data_RGI14.csv' # csv file to be filled with initial flags
+outputfile <- 'C:\\Work\\Research\\RGI7\\LakeTermini\\lake_term_data_RGI11.csv' # csv file to be filled with initial flags
 
 ##################
 # read and intersect lakes with termini
@@ -67,13 +70,14 @@ lakefile <- readOGR(dsn=paste(path_lakes,file_lakes,sep = ""))
 lakefile <- spTransform(lakefile,crs(RGIfile))
 
 # crop RGI to AOI with lakes                                    ! change manually if lake inventory much smaller/larger than RGI extent
-#RGI_cropped <- raster::crop(RGIfile,extent(lakefile))
-RGI_cropped <- RGIfile
+RGI_cropped <- raster::crop(RGIfile,extent(lakefile))
+#lakefile <- raster::crop(lakefile,extent(RGIfile))
+#RGI_cropped <- RGIfile
 
 vecLakeTerm <- vector()
 
 if(termDefinition=='terminus'){
-  bufferR <- 2000
+  bufferR <- 1000
   terminusCoord <- cbind(RGI_cropped$termlon,RGI_cropped$termlat)}
 if(termDefinition=='centroid'){
   bufferR <- 15000
@@ -84,12 +88,31 @@ terminusCoord_utm  <- st_transform(st_sfc(st_point(terminusCoord[i,]), crs = 432
 circle <- st_buffer(terminusCoord_utm, bufferR) # radius around terminus or centroid (in m)
 circle <- st_transform(circle, crs = crs(lakefile))
 circle_SPDF <- as(circle, 'Spatial')
-if(length(which(unlist(st_intersects(circle, st_as_sf(lakefile), sparse = F))=='TRUE'))>0){
-  vecLakeTerm[i] <- 4 # fill all termini that have a lake in 2km perimeter with 4 as a temporary flag
-}else{
-  vecLakeTerm[i] <- 0 # all termini with no lake in vicinity whatsoever are set to flag 0
+
+{
+  res <- try(subsetLakes <- st_as_sf(crop(lakefile,extent(circle_SPDF)+(c(-0.001,0.001,-0.001,0.001)))))
+  if(inherits(res, "try-error"))
+  {
+    next
+  }
+  if(length(which(unlist(st_intersects(circle, subsetLakes, sparse = F))=='TRUE'))>0){
+    vecLakeTerm[i] <- 4 # fill all termini that have a lake in perimeter with 4 as a temporary flag
+  }else{
+    vecLakeTerm[i] <- 0 # all termini with no lake in vicinity whatsoever are set to flag 0
+  }
+  if(i %% 100==0) {
+    # Print on the screen some message
+    cat(paste0("progress: ", i/length(RGI_cropped)*100, "\n%"))
+  }
 }
+
 }
+
+vecLakeTerm[is.na(vecLakeTerm)] <- 0
+
+# make subset SPDF to use as guideline for final mapping
+RGI_subset <- RGI_cropped[which(vecLakeTerm==4),]
+writeOGR(obj=RGI_subset, dsn=RGI_manipulated, layer = 'RGI_subset',driver="ESRI Shapefile") 
 
 # fill the template file for eventual export
 templateFile <- read.csv(outputfile)
