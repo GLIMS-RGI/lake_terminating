@@ -74,7 +74,7 @@ RGI_cropped <- raster::crop(RGIfile,extent(lakefile))
 #lakefile <- raster::crop(lakefile,extent(RGIfile))
 #RGI_cropped <- RGIfile
 
-vecLakeTerm <- vector()
+vecLakeTerm <- vector(length = length(RGI_cropped))
 
 if(termDefinition=='terminus'){
   bufferR <- 1000
