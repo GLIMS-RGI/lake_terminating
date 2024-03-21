@@ -14,7 +14,7 @@ def _argparser():
     parser.add_argument('rgi_directory', action='store', type=str,
                         help='The path to the directory containing the RGI region sub-directories.')
     parser.add_argument('rgi_region', action='store', type=str,
-                        help='The name of the RGI v7 region to use.')
+                        help='The name of the RGI v7 region to use (e.g., "RGI2000-v7.0-G-01_alaska").')
     parser.add_argument('lake_outlines', action='store', type=str,
                         help='The filename for the lake inventory to use.')
     parser.add_argument('-epsg', action='store', type=int,
