@@ -1,3 +1,4 @@
+import os
 import argparse
 from pathlib import Path
 import geopandas as gpd
@@ -13,7 +14,7 @@ def _argparser():
     parser.add_argument('rgi_directory', action='store', type=str,
                         help='The path to the directory containing the RGI region sub-directories.')
     parser.add_argument('rgi_region', action='store', type=str,
-                        help='The name of the RGI v7 region to use.')
+                        help='The name of the RGI v7 region to use (e.g., "RGI2000-v7.0-G-01_alaska").')
     parser.add_argument('lake_outlines', action='store', type=str,
                         help='The filename for the lake inventory to use.')
     parser.add_argument('-epsg', action='store', type=int,
@@ -30,7 +31,14 @@ def main():
     args = parser.parse_args()
 
     # load the RGI outlines
-    outlines = gpd.read_file(Path(args.rgi_directory, args.rgi_region, args.rgi_region + '.shp'))
+    if os.path.exists(Path(args.rgi_directory, args.rgi_region + '.shp')):
+        fn_outlines = Path(args.rgi_directory, args.rgi_region + '.shp')
+    elif os.path.exists(Path(args.rgi_directory, args.rgi_region, args.rgi_region + '.shp')):
+        fn_outlines = Path(args.rgi_directory, args.rgi_region, args.rgi_region + '.shp')
+    else:
+        raise FileNotFoundError(f'Unable to find {args.rgi_region}.shp in {args.rgi_directory}, or a sub-directory. Please check path and filename.')
+
+    outlines = gpd.read_file(fn_outlines)
 
     # get a geodataframe of the terminus positions
     terms = outlines.copy()
