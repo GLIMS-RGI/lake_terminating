@@ -88,7 +88,7 @@ def main():
     outlines_buff['notes'] = ''
 
     # only want to change term_type if it hasn't been set (i.e., equal to 9)
-    outlines_buff.loc[(outlines.index.isin(join_nobuff.index)) & (outlines.term_type == 9), 'term_type'] = 2
+    outlines_buff.loc[(outlines.index.isin(join_buff.index)) & (outlines.term_type == 9), 'term_type'] = 2
     outlines_buff.to_file(f"{args.rgi_region}_lakeflag_{args.buffer}m_buffer.shp")
 
 
