@@ -1,3 +1,4 @@
+import os
 import argparse
 from pathlib import Path
 import geopandas as gpd
@@ -30,7 +31,14 @@ def main():
     args = parser.parse_args()
 
     # load the RGI outlines
-    outlines = gpd.read_file(Path(args.rgi_directory, args.rgi_region, args.rgi_region + '.shp'))
+    if os.path.exists(Path(args.rgi_directory, args.rgi_region + '.shp')):
+        fn_outlines = Path(args.rgi_directory, args.rgi_region + '.shp')
+    elif os.path.exists(Path(args.rgi_directory, args.rgi_region, args.rgi_region + '.shp')):
+        fn_outlines = Path(args.rgi_directory, args.rgi_region, args.rgi_region + '.shp')
+    else:
+        raise FileNotFoundError(f'Unable to find {args.rgi_region}.shp in {args.rgi_directory}, or a sub-directory. Please check path and filename.')
+
+    outlines = gpd.read_file(fn_outlines)
 
     # get a geodataframe of the terminus positions
     terms = outlines.copy()
