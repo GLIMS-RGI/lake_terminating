@@ -18,6 +18,9 @@ def _argparser():
     Any "missing" glaciers (glaciers included in the RGI region, but not in any contributor file) will be written to a 
     geopackage (.gpkg) file, {region}_missing.gpkg, for review.
     
+    If there are conflicts after running, you can resolve these by editing {region}_conflicts.csv. Once this is done,
+    re-run this script using the -m (or --merge) flag to merge the resolved conflicts.
+    
     When there are no conflicts, and no missing glaciers, the final CSV file ({region}_lakeflag.csv) can be uploaded
     to github.
     
@@ -33,7 +36,8 @@ def _argparser():
                         help='The path to the directory containing the RGI region files or sub-directories.')
     parser.add_argument('rgi_region', action='store', type=str,
                         help='The name of the RGI v7 region to use (e.g., "RGI2000-v7.0-G-01_alaska").')
-
+    parser.add_argument('-m', '--merge', action='store_true',
+                        help='Merge (resolved) conflicts file with existing consensus attributes.')
     return parser
 
 
@@ -42,15 +46,23 @@ def main():
     args = parser.parse_args()
 
     outlines = gpd.read_file(tools.rgi_loader(args.rgi_directory, args.rgi_region))
-    csv_list = sorted(glob(f"{args.rgi_region}_lakeflag_*.csv"))
-    combined = pd.concat([pd.read_csv(fn) for fn in csv_list],
-                         ignore_index=True).sort_values('rgi_id').reset_index(drop=True)
+    if not args.merge:
+        csv_list = sorted(glob(f"{args.rgi_region}_lakeflag_*.csv"))
+        combined = pd.concat([pd.read_csv(fn) for fn in csv_list],
+                             ignore_index=True).sort_values('rgi_id').reset_index(drop=True)
+    else:
+        print("Attempting to merge resolved conflicts file.")
+        combined = pd.concat([pd.read_csv(f"{args.rgi_region}_lakeflag.csv"),
+                              pd.read_csv(f"{args.rgi_region}_conflicts.csv")],
+                             ignore_index=True).sort_values('rgi_id').reset_index(drop=True)
 
     # find any glaciers not included in our contributions
     missing = outlines[~outlines['rgi_id'].isin(combined['rgi_id'])]
     if len(missing) > 0:
         print(f"Found {len(missing)} glaciers not included in contributions. Saving to {args.rgi_region}_missing.gpkg")
         missing.to_file(f"{args.rgi_region}_missing.gpkg")
+    else:
+        print("No missing glaciers found.")
 
     # find any ids that are duplicated in the table
     dup_ids = combined.loc[combined.duplicated(subset='rgi_id'), 'rgi_id']
@@ -67,12 +79,14 @@ def main():
 
     # if there are conflicts (different lake level), save these to a file for review
     if len(conflicts) > 0:
-        print(f"Found {int(len(conflicts) / 2)} disagreements on lake level. Saving to {args.rgi_region}_conflicts.csv")
+        nconflicts = len(conflicts['rgi_id'].unique())
+        print(f"Found {nconflicts} disagreements on lake level. Saving to {args.rgi_region}_conflicts.csv")
         conflicts.to_csv(f"{args.rgi_region}_conflicts.csv", index=False)
 
     # if there are no conflicts, combine the contributor names
     if len(agreed) > 0:
-        print(f"Found {int(len(agreed) / 2)} duplicated agreed glaciers. Combining contributor names.")
+        nagreed = len(agreed['rgi_id'].unique())
+        print(f"Found {nagreed} duplicated agreed glaciers. Combining contributor names.")
         contribs = agreed.sort_values(['rgi_id', 'contributor']).groupby('rgi_id')['contributor'].apply(
             ', '.join).reset_index()
 
