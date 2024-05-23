@@ -1,7 +1,6 @@
-import os
 import argparse
-from pathlib import Path
 import geopandas as gpd
+import tools
 
 
 def _argparser():
@@ -30,13 +29,7 @@ def main():
     parser = _argparser()
     args = parser.parse_args()
 
-    # load the RGI outlines
-    if os.path.exists(Path(args.rgi_directory, args.rgi_region + '.shp')):
-        fn_outlines = Path(args.rgi_directory, args.rgi_region + '.shp')
-    elif os.path.exists(Path(args.rgi_directory, args.rgi_region, args.rgi_region + '.shp')):
-        fn_outlines = Path(args.rgi_directory, args.rgi_region, args.rgi_region + '.shp')
-    else:
-        raise FileNotFoundError(f'Unable to find {args.rgi_region}.shp in {args.rgi_directory}, or a sub-directory. Please check path and filename.')
+    fn_outlines = tools.rgi_loader(args.rgi_directory, args.rgi_region)
 
     outlines = gpd.read_file(fn_outlines)
 
