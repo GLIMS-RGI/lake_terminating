@@ -1,4 +1,5 @@
 import argparse
+import os.path
 from glob import glob
 import geopandas as gpd
 import pandas as pd
@@ -52,9 +53,14 @@ def main():
                              ignore_index=True).sort_values('rgi_id').reset_index(drop=True)
     else:
         print("Attempting to merge resolved conflicts file.")
-        combined = pd.concat([pd.read_csv(f"{args.rgi_region}_lakeflag.csv"),
-                              pd.read_csv(f"{args.rgi_region}_conflicts.csv")],
-                             ignore_index=True).sort_values('rgi_id').reset_index(drop=True)
+        if not (os.path.exists(f"{args.rgi_region}_lakeflag.csv") and
+                os.path.exists(f"{args.rgi_region}_conflicts.csv")):
+            raise FileNotFoundError(f"Unable to find {args.rgi_region}_lakeflag.csv "
+                                    f"and/or {args.rgi_region}_conflicts.csv in the current working directory.")
+        else:
+            combined = pd.concat([pd.read_csv(f"{args.rgi_region}_lakeflag.csv"),
+                                  pd.read_csv(f"{args.rgi_region}_conflicts.csv")],
+                                 ignore_index=True).sort_values('rgi_id').reset_index(drop=True)
 
     # find any glaciers not included in our contributions
     missing = outlines[~outlines['rgi_id'].isin(combined['rgi_id'])]
