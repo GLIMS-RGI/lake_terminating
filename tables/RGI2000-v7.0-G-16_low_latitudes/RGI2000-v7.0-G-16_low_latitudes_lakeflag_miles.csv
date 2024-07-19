@@ -1,4 +1,4 @@
-rgi_id,lake_terminating_level,image_id,image_date,inventory_doi,contributor
+rgi_id,lake_level,image_id,image_date,inventory_doi,contributor
 RGI2000-v7.0-G-16-00001,0.0,LT05_L1TP_009058_19990710_20240118_02_T1,1999-07-10,,Evan Miles
 RGI2000-v7.0-G-16-00002,0.0,LT05_L1TP_009058_19990710_20240118_02_T1,1999-07-10,,Evan Miles
 RGI2000-v7.0-G-16-00003,0.0,LT05_L1TP_009058_19990710_20240118_02_T1,1999-07-10,,Evan Miles
