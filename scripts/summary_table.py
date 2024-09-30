@@ -7,6 +7,7 @@ import geopandas as gpd
 region_csvs = sorted(glob('*lakeflag.csv', root_dir='tables'))
 
 regions = []
+names = []
 totals = []
 level0 = []
 level1 = []
@@ -15,11 +16,13 @@ level3 = []
 level99 = []
 
 for fn_csv in region_csvs:
-    region = fn_csv.split('_lakeflag')[0]
+    region, name = fn_csv.split('RGI2000-v7.0-G-')[1].split('_lakeflag')[0].split('_', maxsplit=1)
 
     region_csv = pd.read_csv(Path('tables', fn_csv))
+    region_csv = pd.read_csv(fn_csv)
     
-    regions.append(fn_csv.split('RGI2000-v7.0-G-')[1].split('_lakeflag')[0])
+    regions.append(int(region))
+    names.append(' '.join(name.split('_')).title())
     totals.append(len(region_csv))
     
     counts = region_csv['lake_level'].value_counts()
@@ -34,12 +37,15 @@ for fn_csv in region_csvs:
         level99.append(0)
 
 
-global_counts = pd.DataFrame(data={'region': regions, 'numglac': totals, 'level 0': level0,
-                                   'level 1': level1, 'level 2': level2, 'level 3': level3,
-                                   'level99': level99})
+global_counts = pd.DataFrame(data={'region': regions, 'name': names, 'numglac': totals, 
+                                   'level 0': level0, 'level 1': level1, 'level 2': level2, 
+                                   'level 3': level3, 'level99': level99})
 
 global_counts.set_index('region', inplace=True)
-global_counts.loc['global'] = global_counts.sum()
+total = global_counts.sum(numeric_only=True)
+total['name'] = ''
 
-global_counts.to_csv('summary.csv')
+global_counts.loc['global'] = total
+
+global_counts.to_csv(Path('tables', 'regional_summary.csv'))
 
