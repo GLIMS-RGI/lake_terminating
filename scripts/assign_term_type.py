@@ -43,8 +43,15 @@ for reg in regions:
         # lake_level 1 or 2 is defined as lake-terminating
         is_lake = lakeflags['lake_level'].isin([1, 2])
         is_land = lakeflags['lake_level'].isin([0, 3])
-    
-        lakeflags.loc[not_set & is_lake, 'term_type'] = 2 # set lake-terminating
+
+        # some regions have mapped marine-terminating and shelf-terminating glaciers
+        is_shelf = lakeflags['lake_level'] == 98
+        is_marine = lakeflags['lake_level'] == 99
+
         lakeflags.loc[not_set & is_land, 'term_type'] = 0 # set land-terminating
+        lakeflags.loc[not_set & is_marine, 'term_type'] = 1 # set marine-terminating
+        lakeflags.loc[not_set & is_lake, 'term_type'] = 2 # set lake-terminating
+        lakeflags.loc[not_set & is_shelf, 'term_type'] = 3 # set shelf-terminating
+
         lakeflags.to_csv(Path('tables', reg + '_lakeflag.csv'), index=False)
 
