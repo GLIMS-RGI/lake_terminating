@@ -7,7 +7,7 @@ import tools
 
 region_csvs = sorted(glob('*lakeflag.csv', root_dir='tables'))
 
-levels = [0, 1, 2, 3, 99]
+levels = [0, 1, 2, 3, 98, 99]
 
 regions = []
 names = []
@@ -17,6 +17,7 @@ level_dict = {'level0': [], 'level0area': [],
               'level1': [], 'level1area': [],
               'level2': [], 'level2area': [],
               'level3': [], 'level3area': [],
+              'level98': [], 'level98area': [],
               'level99': [], 'level99area': []}
 
 for fn_csv in region_csvs:
