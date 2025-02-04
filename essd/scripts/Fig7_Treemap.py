@@ -73,4 +73,4 @@ for ax, name in zip(axs, ['num', 'area']):
 axs[0].annotate('a)', (0, 1.02), xycoords='axes fraction')
 axs[1].annotate('b)', (0, 1.02), xycoords='axes fraction')
 
-fig.savefig(Path('figures', 'Fig6_Treemap.png'), dpi=300, bbox_inches='tight')
+fig.savefig(Path('figures', 'Fig7_Treemap.png'), dpi=300, bbox_inches='tight')
