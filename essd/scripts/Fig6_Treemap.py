@@ -8,7 +8,7 @@ import squarify
 
 
 # load the regional summary from github
-csv_url = 'https://raw.githubusercontent.com/GLIMS-RGI/lake_terminating/refs/heads/cleanup/tables/regional_summary.csv'
+csv_url = 'https://raw.githubusercontent.com/GLIMS-RGI/lake_terminating/refs/heads/main/tables/regional_summary.csv'
 data = pd.read_csv(csv_url)
 data = data.loc[data['region'] != 'global']
 
@@ -43,7 +43,7 @@ fig_data.set_index('region', inplace=True)
 fig_data.loc['All others'] = small_regs.sum(numeric_only=True)
 
 # get a list of colors
-colors = plt.rcParams['axes.prop_cycle'].by_key()['color'][:len(fig_data)]
+colors = matplotlib.cm.tab20b(np.linspace(0, 1, len(fig_data)))
 
 # make the plot
 sns.set_theme(font_scale=1.5, style="white")
@@ -57,7 +57,7 @@ for ax, name in zip(axs, ['num', 'area']):
     ax.axis('off')
 
     pcts = fig_data[f"lake_{name}"] / fig_data[f"lake_{name}"].sum()
-    pcts[pcts < 0.01] = np.nan
+    pcts[pcts < 0.02] = np.nan
     pct_labels = pd.Series([f"{p:.1%}" for p in pcts], index=pcts.index)
     pct_labels[pcts.isna()] = ''
 
