@@ -1,5 +1,6 @@
 from pathlib import Path
 import matplotlib.pyplot as plt
+from matplotlib import patches, collections
 import numpy as np
 import pandas as pd
 import geopandas as gpd
@@ -15,6 +16,59 @@ def stretch_img(img, vmin, vmax):
         stretch[b] = (stretch[b] - vn) / (vx - vn)
 
     return stretch
+
+def add_bbox(ax, bar, ann):
+    left, right = ann
+
+    bbox_left = ax.transData.inverted().transform(left.get_window_extent())
+    bbox_right = ax.transData.inverted().transform(right.get_window_extent())
+
+    text_bot = min(bbox_left[:, 1].tolist() + bbox_right[:, 1].tolist())
+    bar_top = bar.xy[1] + bar.get_height()
+
+    text_left = min(bbox_left[:, 0])
+    text_right = max(bbox_right[:, 0])
+
+    width = text_right - text_left
+    height = bar_top - text_bot
+
+    bbox = patches.Rectangle((text_left - 0.05 * width, text_bot - 0.05 * height), 1.1*width, 1.3*height,
+                             facecolor='w', edgecolor='k', alpha=0.9, capstyle='round', zorder=2.5)
+
+    return bbox
+
+
+def add_scalebar(ax):
+    xmin, xmax = ax.get_xlim()
+    ymin, ymax = ax.get_ylim()
+
+    xscale = xmax - xmin
+    yscale = ymax - ymin
+
+    sb_length = max(np.floor(0.2 * xscale / 1000), 1) * 1000
+
+    sbx = xmin + xscale * 0.08
+    sby = ymin + yscale * 0.08
+
+    hfact = 0.01 # 1% of the axis extent
+    pad = 0.4
+
+    # create the background box
+    left = ax.text(sbx, sby - 0.01 * yscale, '0 km',
+                   va='top', ha='center', size=10, color='k', zorder=2.5)
+    right = ax.text(sbx + sb_length, sby - 0.01 * yscale, f"{int(sb_length / 1000)} km",
+                    va='top', ha='center', size=10, color='k', zorder=2.5)
+
+    full_bar = patches.Rectangle((sbx, sby), sb_length, hfact * yscale, color='k')
+    half_bar = patches.Rectangle((sbx + 0.5 * sb_length, sby + pad/2 * hfact * yscale),
+                                 0.495 * sb_length, (1-pad) * hfact * yscale, facecolor='w', edgecolor='none')
+
+    bbox = add_bbox(ax, full_bar, (left, right))
+    scalebar = collections.PatchCollection([bbox, full_bar, half_bar], match_original=True, zorder=2.5)
+    ax.add_collection(scalebar)
+
+    left.set_zorder(10)
+    right.set_zorder(10)
 
 
 sns.set_theme(font_scale=1.5, style="white")
@@ -47,8 +101,9 @@ for num, level in enumerate([1, 2, 3, 0]):
         term = termini.to_crs(img.crs).loc[glac, :]
         these_lakes = lakes.to_crs(img.crs).loc[lakes['rgi_id'] == glac]
         if len(these_lakes) > 0:
-            cx, cy = these_lakes.union_all().envelope.centroid.x, these_lakes.union_all().envelope.centroid.y
-            minx, miny, maxx, maxy = these_lakes.union_all().bounds
+            geom = gpd.GeoSeries(these_lakes['geometry'].to_list() + [term['geometry']]).union_all()
+            cx, cy = geom.envelope.centroid.x, geom.envelope.centroid.y
+            minx, miny, maxx, maxy = geom.bounds
 
             # use the larger of the envelope of all the lakes, or 2 km
             scale = max(2000, max(maxx - minx, maxy - miny))
@@ -65,6 +120,8 @@ for num, level in enumerate([1, 2, 3, 0]):
         stretched = stretch_img(img, [0.008, 0.017, 0.031], [0.75, 0.50, 0.53])
         stretched.plot(ax=axdict[glac], add_cbar=False)
 
+        add_scalebar(axdict[glac])
+
         # plot the glacier outline
         gpd.GeoDataFrame([glacier]).boundary.plot(ax=axdict[glac], color='#ff00f0')
 
@@ -78,11 +135,10 @@ for num, level in enumerate([1, 2, 3, 0]):
         axdict[glac].set_xticks([])
         axdict[glac].set_yticks([])
 
-
     ax1, ax2, ax3, ax4 = axs.flatten()
 
     label_loc = (0.03, 0.92)
-    bbox = dict(fc="w")
+    bbox = dict(fc="w", alpha=0.9)
     for lab, ax in zip('abcd', axs.flatten()):
         ax.annotate(f"{lab})", label_loc, xycoords='axes fraction', bbox=bbox)
 
