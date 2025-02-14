@@ -43,9 +43,9 @@ regional_vals['lake_area'] = lake_flags.loc[lake_flags['lake_level'].isin([1, 2]
 regional_vals['pct_area'] = 100 * regional_vals['lake_area'] / regional_vals['total_area']
 regional_vals.index = names
 
-bins = np.arange(-2, 4, 0.2)
-dens_all, _ = np.histogram(np.log10(lake_flags['area']), bins, density=True)
-dens_lake, _ = np.histogram(np.log10(lake_flags.loc[lake_flags['lake_level'].isin([1, 2]), 'area']), bins, density=True)
+bins = np.logspace(-2, 3, 100)
+dens_all, _ = np.histogram(lake_flags['area'], bins)
+dens_lake, _ = np.histogram(lake_flags.loc[lake_flags['lake_level'].isin([1, 2]), 'area'], bins)
 
 # now, plot the distributions
 sns.set_theme(font_scale=1.5, style="white")
@@ -53,17 +53,19 @@ sns.set_style('ticks')  # white style with tick marks
 
 fig, axs = plt.subplots(2, 1, figsize=(12, 14))
 
-axs[0].plot(bins[:-1] + 0.1, dens_all, 'o-', color='#8da0cb', label='All', linewidth=2)
-axs[0].plot(bins[:-1] + 0.1, dens_lake, 's-', color='#1f78b4', label='Lake-terminating', linewidth=2)
+axs[0].plot(bins[:-1], dens_all, 'o-', color='#8da0cb', label='All', linewidth=2)
+axs[0].plot(bins[:-1], dens_lake, 's-', color='#1f78b4', label='Lake-terminating', linewidth=2)
 
+axs[0].set_xscale('log')
+axs[0].set_yscale('log')
 axs[0].legend(fontsize='small')
 
 # now, set the labels
-axs[0].set_xticks(axs[0].get_xticks(), labels=[f"10$^{{{int(x)}}}$" for x in axs[0].get_xticks()])
-axs[0].set_xlim(-2.2, 4.2)
+# axs[0].set_xticks(axs[0].get_xticks(), labels=[f"10$^{{{int(x)}}}$" for x in axs[0].get_xticks()])
+# axs[0].set_xlim(-2.2, 4.2)
 
-axs[0].set_xlabel('Area (km$^2$)')
-axs[0].set_ylabel('Density')
+axs[0].set_xlabel('Glacier Area (km$^2$, logscale)')
+axs[0].set_ylabel('Number of Glaciers (logscale)')
 
 axs[1] = sns.barplot(data=regional_vals['pct_area'], ax=axs[1], color='0.5')
 axs[1].set_xticks(axs[1].get_xticks(), axs[1].get_xticklabels(), rotation=45, va='top', ha='right', size='x-small')
