@@ -95,7 +95,7 @@ for num, level in enumerate([1, 2, 3, 0]):
     for glac, row in examples.loc[examples['level'] == level].iterrows():
         fn_img = examples.loc[glac, 'image_id']
 
-        img = gu.Raster(Path('maps', fn_img + '_pan.tif'))
+        img = gu.Raster(Path('maps', fn_img + '_pan_swir.tif'))
 
         glacier = glaciers.to_crs(img.crs).loc[glac, :]
         term = termini.to_crs(img.crs).loc[glac, :]
@@ -117,17 +117,20 @@ for num, level in enumerate([1, 2, 3, 0]):
                             cx + 0.75 * scale, cy + 0.75 * scale], inplace=True)
         xmin, ymin, xmax, ymax = img.bounds
 
-        stretched = stretch_img(img, [0.008, 0.017, 0.031], [0.75, 0.50, 0.53])
+        vmins = [0.003, 0.05, 0.024]
+        vmaxs = [0.223, 0.356, 0.307]
+
+        stretched = stretch_img(img, vmins, vmaxs)
         stretched.plot(ax=axdict[glac], add_cbar=False)
 
         add_scalebar(axdict[glac])
 
         # plot the glacier outline
-        gpd.GeoDataFrame([glacier]).boundary.plot(ax=axdict[glac], color='#ff00f0')
+        gpd.GeoDataFrame([glacier]).boundary.plot(ax=axdict[glac], color='#d2042d', linewidth=2)
 
         # plot the lake outlines, if they exist
         if len(these_lakes) > 0:
-            these_lakes.boundary.plot(ax=axdict[glac], color='#00d8ff')
+            these_lakes.boundary.plot(ax=axdict[glac], color='#ffffff')
 
         axdict[glac].set_xlim(xmin, xmax)
         axdict[glac].set_ylim(ymin, ymax)
