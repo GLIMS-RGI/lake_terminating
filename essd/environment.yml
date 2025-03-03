@@ -1,0 +1,10 @@
+name: rgi_lakes
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - pandas
+  - geopandas
+  - seaborn
+  - squarify
