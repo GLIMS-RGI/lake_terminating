@@ -143,7 +143,7 @@ for num, level in enumerate([1, 2, 3, 0]):
     label_loc = (0.03, 0.92)
     bbox = dict(fc="w", alpha=0.9)
     for lab, ax in zip('abcd', axs.flatten()):
-        ax.annotate(f"{lab})", label_loc, xycoords='axes fraction', bbox=bbox)
+        ax.annotate(f"({lab})", label_loc, xycoords='axes fraction', bbox=bbox)
 
     plt.subplots_adjust(hspace=0.05, wspace=0.05)
 
