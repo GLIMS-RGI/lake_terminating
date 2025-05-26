@@ -8,3 +8,5 @@ dependencies:
   - geopandas
   - seaborn
   - squarify
+  - geoutils
+  - cartopy

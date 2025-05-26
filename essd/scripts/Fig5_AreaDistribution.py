@@ -4,6 +4,7 @@ import geopandas as gpd
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from matplotlib.gridspec import GridSpec
 
 
 base_url = 'https://github.com/GLIMS-RGI/lake_terminating/raw/refs/heads/main/tables/RGI2000-v7.0-G-'
@@ -44,36 +45,68 @@ regional_vals['pct_area'] = 100 * regional_vals['lake_area'] / regional_vals['to
 regional_vals.index = names
 
 bins = np.logspace(-2, 3, 100)
-dens_all, _ = np.histogram(lake_flags['area'], bins)
-dens_lake, _ = np.histogram(lake_flags.loc[lake_flags['lake_level'].isin([1, 2]), 'area'], bins)
+#dens_lake, _ = np.histogram(lake_flags.loc[lake_flags['lake_level'].isin([1, 2]), 'area'], bins)
+
+densities = dict()
+densities['all'], _ = np.histogram(lake_flags['area'], bins)
+densities['level0'], _ = np.histogram(lake_flags.loc[lake_flags['lake_level'].isin([0]), 'area'], bins)
+densities['level1'], _ = np.histogram(lake_flags.loc[lake_flags['lake_level'].isin([1]), 'area'], bins)
+densities['level2'], _ = np.histogram(lake_flags.loc[lake_flags['lake_level'].isin([2]), 'area'], bins)
+densities['level3'], _ = np.histogram(lake_flags.loc[lake_flags['lake_level'].isin([3]), 'area'], bins)
+
+for lev, dens in densities.items():
+    densities[lev] = dens * 1.
+    densities[lev][dens == 0] = np.nan
+
+# turn the densities into fractions
+fractions = densities.copy()
+
+for lev, dens in fractions.items():
+    fractions[lev] = dens / np.nansum(dens)
 
 # now, plot the distributions
 sns.set_theme(font_scale=1.5, style="white")
 sns.set_style('ticks')  # white style with tick marks
 
-fig, axs = plt.subplots(2, 1, figsize=(12, 14))
+# fig, axs = plt.subplots(2, 1, figsize=(12, 14))
+fig = plt.figure(figsize=(12, 14))
+axs = []
 
-axs[0].plot(bins[:-1], dens_all, 'o-', color='#8da0cb', label='All', linewidth=2)
-axs[0].plot(bins[:-1], dens_lake, 's-', color='#1f78b4', label='Lake-terminating', linewidth=2)
+gs = GridSpec(2, 2, figure=fig)
+axs.append(fig.add_subplot(gs[0, 0]))
+axs.append(fig.add_subplot(gs[0, 1]))
+axs.append(fig.add_subplot(gs[1, :]))
 
-axs[0].set_xscale('log')
-axs[0].set_yscale('log')
-axs[0].legend(fontsize='small')
+labels = {'all': 'All', 'level0': 'Level 0', 'level1': 'Level 1',
+          'level2': 'Level 2', 'level3': 'Level 3'}
 
-# now, set the labels
-# axs[0].set_xticks(axs[0].get_xticks(), labels=[f"10$^{{{int(x)}}}$" for x in axs[0].get_xticks()])
-# axs[0].set_xlim(-2.2, 4.2)
+markers = ['o', 's', 'D', '^', 'X']
+colors = ['#7a0177', '#a1dab4', '#253494', '#2c7fb8', '#41b6c4']
+
+for data, ax in zip([densities, fractions], axs[:2]):
+    for lev, vals, marker, col in zip(data.keys(), data.values(), markers, colors):
+        ax.plot(bins[:-1], vals, marker=marker, color=col, label=labels[lev], linewidth=2)
+    ax.set_xscale('log')
+    ax.set_yscale('log')
+
+axs[1].legend(fontsize='small', loc='lower left')
 
 axs[0].set_xlabel('Glacier Area (km$^2$, logscale)')
 axs[0].set_ylabel('Number of Glaciers (logscale)')
 
-axs[1] = sns.barplot(data=regional_vals['pct_area'], ax=axs[1], color='0.5')
-axs[1].set_xticks(axs[1].get_xticks(), axs[1].get_xticklabels(), rotation=45, va='top', ha='right', size='x-small')
-axs[1].bar_label(axs[1].containers[0], labels=regional_vals['lake_area'].astype(int), fontsize='xx-small')
+axs[1].set_xlabel('Glacier Area (km$^2$, logscale)')
+axs[1].set_ylabel('Fraction of Glaciers (logscale)')
 
-axs[1].set_ylabel('Lake-terminating glacier area (%)')
+axs[2] = sns.barplot(data=regional_vals['pct_area'], ax=axs[2], color='0.5')
+axs[2].set_xticks(axs[2].get_xticks(), axs[2].get_xticklabels(), rotation=45, va='top', ha='right', size='x-small')
+axs[2].bar_label(axs[2].containers[0], labels=regional_vals['lake_area'].astype(int), fontsize='xx-small')
 
-axs[0].annotate('a)', (0, 1.02), xycoords='axes fraction')
-axs[1].annotate('b)', (0, 1.02), xycoords='axes fraction')
+axs[2].set_ylabel('Lake-terminating glacier area (%)')
+
+label_locs = zip([0.01, 0.01, 0.005], 3 * [0.95])
+for lab, loc, ax in zip('abc', label_locs, axs):
+    ax.annotate(f"({lab})", loc, xycoords='axes fraction')
+
+plt.tight_layout()
 
 fig.savefig('figures/Fig5_AreaDistribution.png', bbox_inches='tight', dpi=300)

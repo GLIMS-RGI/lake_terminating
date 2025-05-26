@@ -53,7 +53,7 @@ fig, axs = plt.subplots(1, 2, figsize=(18, 8))
 
 for ax, name in zip(axs, ['num', 'area']):
     squarify.plot(ax=ax, sizes=fig_data[f"lake_{name}"], label=fig_data.index,
-                  color=colors, text_kwargs=dict(size=12, color='w'))
+                  color=colors, text_kwargs=dict(size=16, color='w'))
     ax.axis('off')
 
     pcts = fig_data[f"lake_{name}"] / fig_data[f"lake_{name}"].sum()
@@ -67,10 +67,10 @@ for ax, name in zip(axs, ['num', 'area']):
     for ii, ann in enumerate(annotations):
         if pct_labels.iloc[ii] != '':
             x, y = ann.get_position()
-            ax.text(x, y, '\n' + pct_labels.iloc[ii], color='w', size=8, va='top', ha='center')
+            ax.text(x, y, '\n' + pct_labels.iloc[ii], color='w', size=12, va='top', ha='center')
 
 # annotate the panels
-axs[0].annotate('a)', (0, 1.02), xycoords='axes fraction')
-axs[1].annotate('b)', (0, 1.02), xycoords='axes fraction')
+axs[0].annotate('(a)', (0, 1.02), xycoords='axes fraction')
+axs[1].annotate('(b)', (0, 1.02), xycoords='axes fraction')
 
 fig.savefig(Path('figures', 'Fig7_Treemap.png'), dpi=300, bbox_inches='tight')

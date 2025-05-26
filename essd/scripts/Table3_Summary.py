@@ -8,7 +8,7 @@ def highlight_global(df):
     return ['textbf:--rwrap;' if ind else '' for ind in is_glob]
 
 # load the regional summary from github
-csv_url = 'https://raw.githubusercontent.com/GLIMS-RGI/lake_terminating/refs/heads/main/tables/regional_summary.csv'
+csv_url = Path('..', 'tables', 'regional_summary.csv')
 data = pd.read_csv(csv_url)
 
 table_data = pd.DataFrame(data=data[['region', 'name', 'numglac']])
