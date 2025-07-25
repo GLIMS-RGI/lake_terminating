@@ -35,7 +35,7 @@ below) to promote consistent determination of lake-terminating status across con
 “probably”, or “possibly” to the question above, you will place it in one of the lake-terminating glacier confidence 
 levels. If you answer “no” or “not likely”, this glacier should be considered land- or marine-terminating.
 
-### Lake-terminating glacier Level 1: lake is in direct contact with **> 50%** of the glacier terminus
+### Lake-terminating glacier Level 1: lake is in direct contact with > 50% of the glacier terminus
 
 The glacier is definitely in direct contact with a large lake that spans at least  ~50% of the glacier terminus. Lakes 
 smaller than 0.01 km<sup>2</sup> should not be considered. Glaciers in this lake-terminating confidence level will have 
@@ -57,7 +57,7 @@ affecting upstream glacier mass loss and flow dynamics. See Examples 1-4:
   </tr>
 </table>
 
-### Lake-terminating glacier Level 2: lake is in direct contact with **< 50%** of the glacier terminus
+### Lake-terminating glacier Level 2: lake is in direct contact with < 50% of the glacier terminus
 
 The glacier is definitely in direct contact with a lake that spans only a smaller part (clearly less than 50% but more 
 than 10%) of the terminus, or with one or more lakes that occur at the side. Glaciers in this lake-terminating 
@@ -79,7 +79,7 @@ it is less certain than in Level 1 cases. See Examples 5-7:
   </tr>
 </table>
 
-### Lake-terminating glacier Level 3: lake/s is in direct contact with **< 10% of the glacier terminus
+### Lake-terminating glacier Level 3: lake/s is in direct contact with < 10% of the glacier terminus
 
 The glacier tongue is in contact with one or more small lakes (area > 0.01 km<sup>2</sup>) that collectively are in 
 contact with <~10% of the terminal perimeter. Glaciers in this lake-terminating confidence level will have a lake(s) 
