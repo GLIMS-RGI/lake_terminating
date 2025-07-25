@@ -7,16 +7,16 @@ Introductory zoom call (March 4, 2024) where we introduce our main objectives of
 
 Knowledge about the existence of lakes which are in contact with glaciers is a fundamental importance to understand as
 the lakes increase glacier mass loss due to calving, dynamic thinning and increased mass loss at the ice-water interface
-(e.g., King et al. 2019; Tsutaki et al. 2011; 2019; Pronk et al. 2021; Main et a., 2023). Moreover, they impact geodetic mass balance 
-calculations as satellites cannot measure subaqueous mass loss (Zhang et al. 2023).
-
+(e.g., [King et al. 2019](https://doi.org/10.1038/s41598-019-53733-x); [Tsutaki et al. 2011](https://doi.org/10.3189/172756411797252194); [2019](https://doi.org/10.5194/tc-13-2733-2019); [Pronk et al. 2021](https://doi.org/10.5194/tc-15-5577-2021); [Main et a., 2023](https://doi.org/10.1017/jog.2022.114). Moreover, they impact geodetic mass balance 
+calculations as satellites cannot measure subaqueous mass loss ([Zhang et al. 2023](https://doi.org/10.1038/s41561-023-01150-1)).
+  
 ### Motivation
 
 The main aim of this effort is to determine whether a glacier is lake-terminating for the general attribute table
 of the Randolph Glacier Inventory (RGI). Uncertain (in case the existence is possible but cannot be determined due to 
 unsuitable images) or specific cases (e.g. if a lake is only in contact with a small part of the lake termini) shall 
 also be documented. In cases where a glacier is found to be lake-terminating, we seek to provide a qualitative 
-“connectivity level” evaluation (akin to Rastner et al., 2012) that users can further parse depending on their needs.
+“connectivity level” evaluation (akin to [Rastner et al., 2012](https://doi.org/10.5194/tc-6-1483-2012)) that users can further parse depending on their needs.
 
 Secondary aims that can partially addressed with this inventory are a classification of morphologies of lake-terminating
 versus non-lake-terminating glaciers and the provision of a baseline to identify hotspots where cryosphere risks 
@@ -35,7 +35,7 @@ below) to promote consistent determination of lake-terminating status across con
 “probably”, or “possibly” to the question above, you will place it in one of the lake-terminating glacier confidence 
 levels. If you answer “no” or “not likely”, this glacier should be considered land- or marine-terminating.
 
-### Lake-terminating glacier Level 1: lake is <ins>definitely</ins> relevant for glacier behavior
+### Lake-terminating glacier Level 1: lake is in direct contact with **> 50%** of the glacier terminus
 
 The glacier is definitely in direct contact with a large lake that spans at least  ~50% of the glacier terminus. Lakes 
 smaller than 0.01 km<sup>2</sup> should not be considered. Glaciers in this lake-terminating confidence level will have 
@@ -57,7 +57,7 @@ affecting upstream glacier mass loss and flow dynamics. See Examples 1-4:
   </tr>
 </table>
 
-### Lake-terminating glacier Level 2: lake is <ins>probably</ins> relevant for glacier behavior
+### Lake-terminating glacier Level 2: lake is in direct contact with **< 50%** of the glacier terminus
 
 The glacier is definitely in direct contact with a lake that spans only a smaller part (clearly less than 50% but more 
 than 10%) of the terminus, or with one or more lakes that occur at the side. Glaciers in this lake-terminating 
@@ -79,7 +79,7 @@ it is less certain than in Level 1 cases. See Examples 5-7:
   </tr>
 </table>
 
-### Lake-terminating glacier Level 3: lake is <ins>possibly</ins> relevant for glacier behvaiour
+### Lake-terminating glacier Level 3: lake/s is in direct contact with **< 10% of the glacier terminus
 
 The glacier tongue is in contact with one or more small lakes (area > 0.01 km<sup>2</sup>) that collectively are in 
 contact with <~10% of the terminal perimeter. Glaciers in this lake-terminating confidence level will have a lake(s) 
