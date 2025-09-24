@@ -32,10 +32,10 @@ for fn_csv in region_csvs:
     names.append(' '.join(name.split('_')).title())
     totals.append(len(lakeflags))
     
-    counts = lakeflags['lake_level'].value_counts()
+    counts = lakeflags['lake_cat'].value_counts()
     for level in levels:
         if level in counts.index:
-            area = lakeflags.loc[lakeflags['lake_level'] == level, 'area_km2'].sum()
+            area = lakeflags.loc[lakeflags['lake_cat'] == level, 'area_km2'].sum()
 
             level_dict[f"level{level}"].append(counts.loc[level])
             level_dict[f"level{level}area"].append(area)
