@@ -85,18 +85,18 @@ del Cavagn (RGI2000-v7.0-G-11-02473) in Central Europe (region 11). Landsat imag
 ### Ambiguous lake termini
 
 *Streams cutting across termini* are Level 2 in cases where the stream has a clear impact on ice melt and dynamics, 
-otherwise they should be Level 3. See examples below:
+otherwise they should be Level 3. In panel (a) below, the terminus of Childs Glacier (Alaska) is cut across by the
+Copper River, featuring embayments where calving seems to occur. This would be considered a Level 2 lake-terminating 
+glacier. 
 
-<table style="width: 800">
-  <colgroup>
-    <col span="1" style="width: 50%;">
-    <col span="1" style="width: 50%;">
-  </colgroup>
-  <tr>
-    <td style="vertical-align: top;"><img width=400 src="examples/childs.png"><br><b>Example 10:</b> The terminus of Childs Glacier (Alaska) is cut across by the Copper River, featuring embayments where calving seems to occur. This would be considered a Level 2 lake-terminating glacier.</td>
-    <td style="vertical-align: top;"><img width=250 src="examples/tweedsmuir.png"><br><b>Example 11:</b> The terminus of Tweedsmuir Glacier (Yukon) is cut across by the Alsek River, but there appears to be limited interaction between the river and glacier. This would be a Level 3 lake-terminating glacier. </td>
-  </tr>
-</table>
+In panel (b), the terminus of Tweedsmuir Glacier (Yukon) is cut across by the Alsek River, but there appears to be 
+limited interaction between the river and glacier. This would be a Level 3 lake-terminating glacier.
+
+![ambiguous_examples.png](examples/ambiguous_examples.png)
+*Background images are Landsat 7 ETM+ false-color composites (bands 5, 4, 3). RGI7 outlines are shown in red, while lake
+outlines are shown in white. (a) Childs Glacier (RGI2000-v7.0-G-01-11603) in Alaska (region 01). Landsat image acquired
+2000-07-03. (b) Tweedsmuir Glacier (RGI2000-v7.0-G-01-14859) in Alaska (region 01). Landsat image acquired 2000-08-10.*
+
 
 ### Non-lake-terminating glacier Level 0: land-terminating
 
