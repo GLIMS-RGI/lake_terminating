@@ -7,18 +7,18 @@ import tools
 
 region_csvs = sorted(glob('*lakeflag.csv', root_dir='tables'))
 
-levels = [0, 1, 2, 3, 98, 99]
+cats = [0, 1, 2, 3, 98, 99]
 
 regions = []
 names = []
 totals = []
 
-level_dict = {'level0': [], 'level0area': [],
-              'level1': [], 'level1area': [],
-              'level2': [], 'level2area': [],
-              'level3': [], 'level3area': [],
-              'level98': [], 'level98area': [],
-              'level99': [], 'level99area': []}
+cat_dict = {'cat0': [], 'cat0area': [],
+              'cat1': [], 'cat1area': [],
+              'cat2': [], 'cat2area': [],
+              'cat3': [], 'cat3area': [],
+              'cat98': [], 'cat98area': [],
+              'cat99': [], 'cat99area': []}
 
 for fn_csv in region_csvs:
     region, name = fn_csv.split('RGI2000-v7.0-G-')[1].split('_lakeflag')[0].split('_', maxsplit=1)
@@ -33,17 +33,17 @@ for fn_csv in region_csvs:
     totals.append(len(lakeflags))
     
     counts = lakeflags['lake_cat'].value_counts()
-    for level in levels:
-        if level in counts.index:
-            area = lakeflags.loc[lakeflags['lake_cat'] == level, 'area_km2'].sum()
+    for cat in cats:
+        if cat in counts.index:
+            area = lakeflags.loc[lakeflags['lake_cat'] == cat, 'area_km2'].sum()
 
-            level_dict[f"level{level}"].append(counts.loc[level])
-            level_dict[f"level{level}area"].append(area)
+            cat_dict[f"cat{cat}"].append(counts.loc[cat])
+            cat_dict[f"cat{cat}area"].append(area)
         else:
-            level_dict[f"level{level}"].append(0)
-            level_dict[f"level{level}area"].append(0)
+            cat_dict[f"cat{cat}"].append(0)
+            cat_dict[f"cat{cat}area"].append(0)
     
-global_counts = pd.DataFrame(data={'region': regions, 'name': names, 'numglac': totals} | level_dict)
+global_counts = pd.DataFrame(data={'region': regions, 'name': names, 'numglac': totals} | cat_dict)
 
 global_counts.set_index('region', inplace=True)
 total = global_counts.sum(numeric_only=True)
@@ -51,7 +51,7 @@ total['name'] = ''
 
 global_counts.loc['global'] = total
 
-count_cols = ['numglac'] + [f"level{level}" for level in levels]
+count_cols = ['numglac'] + [f"cat{cat}" for cat in cats]
 global_counts[count_cols] = global_counts[count_cols].astype(int)
 
 global_counts.to_csv(Path('tables', 'regional_summary.csv'))

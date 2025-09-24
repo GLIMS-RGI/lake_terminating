@@ -7,25 +7,25 @@ def highlight_global(df):
     is_glob.loc['global'] = True
     return ['textbf:--rwrap;' if ind else '' for ind in is_glob]
 
-# load the regional summary from github
+# load the regional summary from the parent directory
 csv_url = Path('..', 'tables', 'regional_summary.csv')
 data = pd.read_csv(csv_url)
 
 table_data = pd.DataFrame(data=data[['region', 'name', 'numglac']])
 table_data['area'] = data[[c for c in data.columns if 'area' in c]].sum(axis=1)
 
-table_data['level0_num'] = data[['level0', 'level98', 'level99']].sum(axis=1)
-table_data['level0_pct'] = table_data['level0_num'] / table_data['numglac']
+table_data['cat0_num'] = data[['cat0', 'cat98', 'cat99']].sum(axis=1)
+table_data['cat0_pct'] = table_data['cat0_num'] / table_data['numglac']
 
-table_data['level0_area'] = data[['level0area', 'level98area', 'level99area']].sum(axis=1)
-table_data['level0_area_pct'] = table_data['level0_area'] / table_data['area']
+table_data['cat0_area'] = data[['cat0area', 'cat98area', 'cat99area']].sum(axis=1)
+table_data['cat0_area_pct'] = table_data['cat0_area'] / table_data['area']
 
-for lev in range(1, 4):
-    table_data[f"level{lev}_num"] = data[f"level{lev}"]
-    table_data[f"level{lev}_pct"] = table_data[f"level{lev}_num"] / table_data['numglac']
+for cat in range(1, 4):
+    table_data[f"cat{cat}_num"] = data[f"cat{cat}"]
+    table_data[f"cat{cat}_pct"] = table_data[f"cat{cat}_num"] / table_data['numglac']
 
-    table_data[f"level{lev}_area"] = data[f"level{lev}area"]
-    table_data[f"level{lev}_area_pct"] = table_data[f"level{lev}_area"] / table_data['area']
+    table_data[f"cat{cat}_area"] = data[f"cat{cat}area"]
+    table_data[f"cat{cat}_area_pct"] = table_data[f"cat{cat}_area"] / table_data['area']
 
 pct_cols = [c for c in table_data.columns if 'pct' in c]
 
