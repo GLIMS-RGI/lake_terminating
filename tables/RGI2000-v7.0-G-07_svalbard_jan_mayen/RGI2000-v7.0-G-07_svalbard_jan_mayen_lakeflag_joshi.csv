@@ -1,4 +1,4 @@
-rgi_id,auto_term,lake_level,image_id,image_date,inventory_doi,contributor,notes
+rgi_id,auto_term,lake_cat,image_id,image_date,inventory_doi,contributor,notes
 RGI2000-v7.0-G-07-01423,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01424,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01425,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
@@ -6,7 +6,7 @@ RGI2000-v7.0-G-07-01426,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,
 RGI2000-v7.0-G-07-01427,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01428,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01429,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
-RGI2000-v7.0-G-07-01430,9,3,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,"this one is difficult, because the complex is poorly divided – maybe 3 given that it’s only one terminus?"
+RGI2000-v7.0-G-07-01430,9,1,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,"this one is difficult, because the complex is poorly divided – maybe 3 given that it’s only one terminus?"
 RGI2000-v7.0-G-07-01431,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01432,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01433,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
@@ -24,7 +24,7 @@ RGI2000-v7.0-G-07-01444,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,
 RGI2000-v7.0-G-07-01445,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01446,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01447,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
-RGI2000-v7.0-G-07-01448,2,1,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,"I lean towards 1 here, because there are clear icebergs near the terminus"
+RGI2000-v7.0-G-07-01448,2,3,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,"I lean towards 1 here, because there are clear icebergs near the terminus"
 RGI2000-v7.0-G-07-01449,2,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01450,9,0,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01451,9,0,LE07_L1TP_209004_19990727_20200918_02_T1,1999-07-27,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
@@ -35,11 +35,11 @@ RGI2000-v7.0-G-07-01455,9,0,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,
 RGI2000-v7.0-G-07-01456,9,0,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01457,9,0,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01458,9,0,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
-RGI2000-v7.0-G-07-01459,9,3,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,Glacier name : Albrechtbreen
+RGI2000-v7.0-G-07-01459,9,1,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,Glacier name : Albrechtbreen
 RGI2000-v7.0-G-07-01460,9,0,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01461,2,2,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,"agreed that eventually this is clearly lake-terminating, but in 1999 the lake is small"
-RGI2000-v7.0-G-07-01462,2,1,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,Glacier name : Gandbreen N
-RGI2000-v7.0-G-07-01463,2,1,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,Glacier name : Gandbreen S
+RGI2000-v7.0-G-07-01462,2,3,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,Glacier name : Gandbreen N
+RGI2000-v7.0-G-07-01463,2,3,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,Glacier name : Gandbreen S
 RGI2000-v7.0-G-07-01464,9,0,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01465,9,0,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,
 RGI2000-v7.0-G-07-01466,1,0,LE07_L1TP_210004_19990920_20200918_02_T1,1999-09-20,https://doi.org/10.1017/jog.2023.34,Gunjan Joshi,Glacier name : Deltabreen (Deltabreen's entire terminus terminates in a lagoon (not sure if this shoule be classied as lake terminating or marine terminating) 

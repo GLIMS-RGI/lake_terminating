@@ -1,4 +1,4 @@
-rgi_id,auto_term,lake_level,image_id,image_date,inventory_doi,contributor,notes
+rgi_id,auto_term,lake_cat,image_id,image_date,inventory_doi,contributor,notes
 RGI2000-v7.0-G-02-00001,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00002,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00003,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -36,7 +36,7 @@ RGI2000-v7.0-G-02-00036,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00037,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00038,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00039,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00040,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-00040,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00041,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,no evidence for laek in image
 RGI2000-v7.0-G-02-00043,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00044,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -73,7 +73,7 @@ RGI2000-v7.0-G-02-00075,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00077,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00078,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00079,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00080,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,lake polygon may be in contat with margin (if RGI inaccurate) but hard to verify
+RGI2000-v7.0-G-02-00080,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,lake polygon may be in contat with margin (if RGI inaccurate) but hard to verify
 RGI2000-v7.0-G-02-00081,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00082,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00083,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -82,7 +82,7 @@ RGI2000-v7.0-G-02-00085,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00086,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00087,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00089,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00090,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-00090,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00094,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00095,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00096,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -114,7 +114,7 @@ RGI2000-v7.0-G-02-00121,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00122,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00123,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00124,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00125,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,if lake outline is accurate - hard to tell if any shadow effects
+RGI2000-v7.0-G-02-00125,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,if lake outline is accurate - hard to tell if any shadow effects
 RGI2000-v7.0-G-02-00126,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00131,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00132,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -128,7 +128,7 @@ RGI2000-v7.0-G-02-00139,2,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00140,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00141,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00143,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00144,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,small terminal (ice-dammed?) lake
+RGI2000-v7.0-G-02-00144,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,small terminal (ice-dammed?) lake
 RGI2000-v7.0-G-02-00147,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00152,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00153,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -139,7 +139,7 @@ RGI2000-v7.0-G-02-00157,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00161,2,2,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00167,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00168,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00169,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,rgi issue - head cut off from rest of glacier
+RGI2000-v7.0-G-02-00169,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,rgi issue - head cut off from rest of glacier
 RGI2000-v7.0-G-02-00170,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00172,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00173,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -218,7 +218,7 @@ RGI2000-v7.0-G-02-00257,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00258,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00259,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00260,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00261,9,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,difficult to tell if terminates in snowfilled basin or lake (missed by JRC)
+RGI2000-v7.0-G-02-00261,9,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,difficult to tell if terminates in snowfilled basin or lake (missed by JRC)
 RGI2000-v7.0-G-02-00262,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00263,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00264,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -311,7 +311,7 @@ RGI2000-v7.0-G-02-00360,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00361,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00362,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00363,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00364,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-00364,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00365,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00366,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00367,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -358,7 +358,7 @@ RGI2000-v7.0-G-02-00407,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00408,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00409,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00410,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00411,9,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,lake missed in jrc
+RGI2000-v7.0-G-02-00411,9,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,lake missed in jrc
 RGI2000-v7.0-G-02-00412,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00413,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00414,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -372,7 +372,7 @@ RGI2000-v7.0-G-02-00424,2,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00425,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00426,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00427,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00428,9,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,small terminale lake missed by JRC
+RGI2000-v7.0-G-02-00428,9,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,small terminale lake missed by JRC
 RGI2000-v7.0-G-02-00429,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00430,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00431,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -459,7 +459,7 @@ RGI2000-v7.0-G-02-00523,2,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00524,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00525,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00526,2,2,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,if jrc correct
-RGI2000-v7.0-G-02-00527,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,rgi issue - should be split
+RGI2000-v7.0-G-02-00527,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,rgi issue - should be split
 RGI2000-v7.0-G-02-00528,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00529,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00531,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -482,7 +482,7 @@ RGI2000-v7.0-G-02-00558,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00559,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00560,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00561,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00562,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"based on jrc, could have terminal lake but may be shadow"
+RGI2000-v7.0-G-02-00562,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"based on jrc, could have terminal lake but may be shadow"
 RGI2000-v7.0-G-02-00563,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00564,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00565,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -491,7 +491,7 @@ RGI2000-v7.0-G-02-00567,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00568,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00569,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00570,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00571,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-00571,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00572,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00577,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00578,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -502,7 +502,7 @@ RGI2000-v7.0-G-02-00582,2,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00583,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00584,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00585,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00586,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-00586,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00587,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00588,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00589,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -590,7 +590,7 @@ RGI2000-v7.0-G-02-00679,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00680,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00681,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00682,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00684,9,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"westerm lobe - rgi issue, should likely be split"
+RGI2000-v7.0-G-02-00684,9,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"westerm lobe - rgi issue, should likely be split"
 RGI2000-v7.0-G-02-00688,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00689,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00690,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -622,7 +622,7 @@ RGI2000-v7.0-G-02-00721,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00722,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00723,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00724,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00725,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,v small terminal lake?
+RGI2000-v7.0-G-02-00725,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,v small terminal lake?
 RGI2000-v7.0-G-02-00727,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00728,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00729,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -642,7 +642,7 @@ RGI2000-v7.0-G-02-00742,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00743,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00744,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00745,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00746,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,v small terminal lake?
+RGI2000-v7.0-G-02-00746,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,v small terminal lake?
 RGI2000-v7.0-G-02-00747,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00748,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00749,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -704,15 +704,15 @@ RGI2000-v7.0-G-02-00809,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00810,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00811,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00812,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00813,9,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,might have lake missed by JRC - had to tell at image resolution
+RGI2000-v7.0-G-02-00813,9,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,might have lake missed by JRC - had to tell at image resolution
 RGI2000-v7.0-G-02-00815,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00816,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-008190,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00820,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-00820,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00822,2,2,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,lake-terminating if JRC is correct - looks like rimmed by lake at least
-RGI2000-v7.0-G-02-00823,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-00823,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00824,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00826,9,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,lake missed by JRC
+RGI2000-v7.0-G-02-00826,9,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,lake missed by JRC
 RGI2000-v7.0-G-02-00830,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00831,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00832,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -720,9 +720,9 @@ RGI2000-v7.0-G-02-00833,2,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00834,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00835,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00836,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00837,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-00837,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00838,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00839,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"if rgi outline correct, which looks suspect"
+RGI2000-v7.0-G-02-00839,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"if rgi outline correct, which looks suspect"
 RGI2000-v7.0-G-02-00840,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00841,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00842,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -753,7 +753,7 @@ RGI2000-v7.0-G-02-00868,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00869,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00870,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00871,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00872,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"difficult to tell from imagey, but may be lake terminating"
+RGI2000-v7.0-G-02-00872,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"difficult to tell from imagey, but may be lake terminating"
 RGI2000-v7.0-G-02-00873,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00874,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00875,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -770,7 +770,7 @@ RGI2000-v7.0-G-02-00885,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00886,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00887,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00888,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00889,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-00889,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00891,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00892,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00893,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -778,7 +778,7 @@ RGI2000-v7.0-G-02-00894,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-00895,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00896,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00897,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-00898,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,lake terminating if JRC is correct at image time - can't tell from image
+RGI2000-v7.0-G-02-00898,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,lake terminating if JRC is correct at image time - can't tell from image
 RGI2000-v7.0-G-02-00899,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-00900,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"rgi issue? - doesnt seem like ice divide, split from trunk?"
 RGI2000-v7.0-G-02-00901,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -880,15 +880,15 @@ RGI2000-v7.0-G-02-01016,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-01017,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01018,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01019,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-01020,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-01020,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01021,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01022,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01023,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01024,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01025,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01026,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-01027,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,rgi issue - head cut off
-RGI2000-v7.0-G-02-01028,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-01027,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,rgi issue - head cut off
+RGI2000-v7.0-G-02-01028,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01045,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01046,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01047,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -898,7 +898,7 @@ RGI2000-v7.0-G-02-01050,2,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-01051,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01053,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01054,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-01057,9,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"rgi issue? doesn't really look like a glacier, but does terminate in jrc missed"
+RGI2000-v7.0-G-02-01057,9,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"rgi issue? doesn't really look like a glacier, but does terminate in jrc missed"
 RGI2000-v7.0-G-02-01058,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01059,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01060,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -909,10 +909,10 @@ RGI2000-v7.0-G-02-01064,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-01065,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01066,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01070,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-01071,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,v small terminal lake
+RGI2000-v7.0-G-02-01071,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,v small terminal lake
 RGI2000-v7.0-G-02-01072,2,2,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,small terminal lake
 RGI2000-v7.0-G-02-01073,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-01074,9,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,lake missed by jrc
+RGI2000-v7.0-G-02-01074,9,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,lake missed by jrc
 RGI2000-v7.0-G-02-01075,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01076,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01077,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -954,7 +954,7 @@ RGI2000-v7.0-G-02-01143,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-01144,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01145,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01146,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-01147,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-01147,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01148,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01149,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01150,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -1033,11 +1033,11 @@ RGI2000-v7.0-G-02-01232,9,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-01233,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01234,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-01235,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-04567,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-04567,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-04573,2,2,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,river cutting across terminus
-RGI2000-v7.0-G-02-04579,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-04579,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-06484,2,2,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,looks v shallow at terminus
-RGI2000-v7.0-G-02-07084,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-07084,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07346,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07347,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07348,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -1071,19 +1071,19 @@ RGI2000-v7.0-G-02-07379,2,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-07380,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07384,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07387,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07388,9,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,may have debris covered tongue in lake contact
+RGI2000-v7.0-G-02-07388,9,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,may have debris covered tongue in lake contact
 RGI2000-v7.0-G-02-07390,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07395,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07396,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07399,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07401,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07402,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07403,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,may have small zone of lake contact
+RGI2000-v7.0-G-02-07403,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,may have small zone of lake contact
 RGI2000-v7.0-G-02-07404,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07405,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07409,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,maybe very small lake
+RGI2000-v7.0-G-02-07409,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,maybe very small lake
 RGI2000-v7.0-G-02-07416,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07418,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-07418,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07419,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,lake not present in 1999
 RGI2000-v7.0-G-02-07423,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07424,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -1093,7 +1093,7 @@ RGI2000-v7.0-G-02-07427,2,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-07438,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07441,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07443,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07445,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,very small terminal lake
+RGI2000-v7.0-G-02-07445,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,very small terminal lake
 RGI2000-v7.0-G-02-07456,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07478,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07487,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -1131,7 +1131,7 @@ RGI2000-v7.0-G-02-07522,2,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-07523,2,2,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07524,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07526,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07528,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-07528,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07531,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07532,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07533,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -1143,8 +1143,8 @@ RGI2000-v7.0-G-02-07551,2,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-07554,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07555,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07557,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07558,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07567,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-07558,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-07567,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07601,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07602,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07603,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -1162,7 +1162,7 @@ RGI2000-v7.0-G-02-07632,2,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-07633,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07634,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07636,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07637,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,may have small zone of contact
+RGI2000-v7.0-G-02-07637,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,may have small zone of contact
 RGI2000-v7.0-G-02-07638,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07639,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07643,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -1170,9 +1170,9 @@ RGI2000-v7.0-G-02-07646,2,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-07647,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07648,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07650,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07651,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,appears to be above lake
+RGI2000-v7.0-G-02-07651,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,appears to be above lake
 RGI2000-v7.0-G-02-07652,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07663,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,appears to be above lake
+RGI2000-v7.0-G-02-07663,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,appears to be above lake
 RGI2000-v7.0-G-02-07667,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07670,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07676,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
@@ -1189,20 +1189,20 @@ RGI2000-v7.0-G-02-07690,2,0,cloud-free composite,1999-2022,https://doi.org/10.10
 RGI2000-v7.0-G-02-07692,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07697,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07707,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07713,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"snow-covered image, but shapefiles appear to overlap"
+RGI2000-v7.0-G-02-07713,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"snow-covered image, but shapefiles appear to overlap"
 RGI2000-v7.0-G-02-07717,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07721,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07725,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07734,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07739,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"may have small contact zone, but difficult to tell with snowy imagery"
+RGI2000-v7.0-G-02-07739,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"may have small contact zone, but difficult to tell with snowy imagery"
 RGI2000-v7.0-G-02-07741,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07742,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"difficult to tell at image resolution/snow cover, but appears to be in contact"
+RGI2000-v7.0-G-02-07742,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"difficult to tell at image resolution/snow cover, but appears to be in contact"
 RGI2000-v7.0-G-02-07751,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07754,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07769,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07773,2,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
-RGI2000-v7.0-G-02-07774,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"may be in contact, but could be vertically separated"
-RGI2000-v7.0-G-02-07777,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
+RGI2000-v7.0-G-02-07774,2,1,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,"may be in contact, but could be vertically separated"
+RGI2000-v7.0-G-02-07777,2,3,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07784,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07785,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,
 RGI2000-v7.0-G-02-07786,9,0,cloud-free composite,1999-2022,https://doi.org/10.1038/nature20584,Armstrong,

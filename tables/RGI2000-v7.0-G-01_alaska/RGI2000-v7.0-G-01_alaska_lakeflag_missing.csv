@@ -1,4 +1,4 @@
-rgi_id,auto_term,lake_level,image_id,image_date,contributor,inventory_doi,notes
+rgi_id,auto_term,lake_cat,image_id,image_date,contributor,inventory_doi,notes
 RGI2000-v7.0-G-01-00596,9,0,cloud-free composite,1999-2001,Armstrong,https://doi.org/10.18739/A2MK6591G,marked based on lake flagging script
 RGI2000-v7.0-G-01-00597,9,0,cloud-free composite,1999-2001,Armstrong,https://doi.org/10.18739/A2MK6591G,marked based on lake flagging script
 RGI2000-v7.0-G-01-04603,9,0,cloud-free composite,1999-2001,"Armstrong, Rick",https://doi.org/10.18739/A2MK6591G,marked based on lake flagging script

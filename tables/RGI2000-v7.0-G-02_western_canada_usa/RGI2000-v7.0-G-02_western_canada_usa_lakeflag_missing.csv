@@ -1,4 +1,4 @@
-rgi_id,auto_term,lake_level,image_id,image_date,contributor,inventory_doi,notes
+rgi_id,auto_term,lake_cat,image_id,image_date,contributor,inventory_doi,notes
 RGI2000-v7.0-G-02-00010,9,0,cloud-free mosaic,1999-2022,Armstrong,https://doi.org/10.1038/nature20584,marked based on lake flagging script
 RGI2000-v7.0-G-02-00011,9,0,cloud-free mosaic,1999-2022,Armstrong,https://doi.org/10.1038/nature20584,marked based on lake flagging script
 RGI2000-v7.0-G-02-00042,9,0,cloud-free mosaic,1999-2022,Armstrong,https://doi.org/10.1038/nature20584,marked based on lake flagging script
