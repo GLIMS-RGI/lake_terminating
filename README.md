@@ -31,7 +31,7 @@ a glacier is lake-terminating and how to assess connectivity level to provide co
 
 The `dataset/` folder has the following structure:
 
-```commandline
+```
 dataset/
 ├─ contributor_files/
     └─ RGI-v7.0-G-{region}/
