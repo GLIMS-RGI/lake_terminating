@@ -35,7 +35,7 @@ def get_hex_gdf(glacs):
     return hex_gdf.dropna(subset=['count'])
 
 
-base_url = Path('..', 'dataset')
+base_url = Path('..', 'dataset', 'csv')
 
 regions = ['01_alaska', '02_western_canada_usa', '03_arctic_canada_north', '04_arctic_canada_south',
            '05_greenland_periphery', '06_iceland', '07_svalbard_jan_mayen', '08_scandinavia', '09_russian_arctic',
