@@ -6,8 +6,8 @@ ESSD submission of the global lake-terminating glacier mapping effort.
 The figures are shown below, along with the caption for each from the
 manuscript:
 
-![](figures/Fig1_Level_1_Examples.png)
-**Fig. 1**: Examples of lake-terminating level 1 glacier termini. Background images
+![Fig1_Category_3_Examples.png](figures/Fig1_Category_3_Examples.png)
+**Fig. 1**: Examples of lake-terminating category 3 glacier termini. Background images
 are Landsat 7 ETM+ false-color composites (bands 5, 4, 3). RGI7 outlines are shown 
 in red, while lake outlines are shown in white. (a) Alsek Glacier 
 (RGI2000-v7.0-G-01-16980) in Alaska (region 01). Landsat image acquired 2000-08-10. 
@@ -19,8 +19,8 @@ acquired 1999-07-31. (c) Skilak Glacier (RGI2000-v7.0-G-01-08014) in Alaska
 
 &nbsp;
 
-![](figures/Fig2_Level_2_Examples.png)
-**Fig. 2**: Examples of lake-terminating level 2 glacier termini. Background images 
+![Fig2_Category_2_Examples.png](figures/Fig2_Category_2_Examples.png)
+**Fig. 2**: Examples of lake-terminating category 2 glacier termini. Background images 
 are Landsat 7 ETM+ false-color composites (bands 5, 4, 3). RGI7 outlines are shown 
 in red, while lake outlines are shown in white. (a) Malaspina (Sít' Tlein) Glacier 
 (RGI2000-v7.0-G-01-15261) in Alaska (region 01). Landsat image acquired 2000-09-09. 
@@ -34,8 +34,8 @@ Fork Glacier (RGI2000-v7.0-G-01-06125) in Alaska (region 01). Landsat image acqu
 
 &nbsp;
 
-![](figures/Fig3_Level_3_Examples.png)
-**Fig. 3**: Examples of lake-terminating level 3 glacier termini. Background images
+![Fig3_Category_1_Examples.png](figures/Fig3_Category_1_Examples.png)
+**Fig. 3**: Examples of lake-terminating category 1 glacier termini. Background images
 are Landsat 7 ETM+ false-color composites (bands 5, 4, 3). RGI7 outlines are shown
 in red, while lake outlines are shown in white. (a) Chisana Glacier 
 (RGI2000-v7.0-G-01-05589) in Alaska (region 01). Landsat image acquired 1999-08-11. 
@@ -47,8 +47,8 @@ acquired 2000-08-16. (c) Unnamed glacier (RGI2000-v7.0-G-01-16871) in Alaska
 
 &nbsp;
 
-![](figures/Fig4_Level_0_Examples.png)
-**Fig. 4**: Examples of lake-terminating level 0 glacier termini. Background images
+![Fig4_Category_0_Examples.png](figures/Fig4_Category_0_Examples.png)
+**Fig. 4**: Examples of lake-terminating category 0 glacier termini. Background images
 are Landsat 7 ETM+ false-color composites (bands 5, 4, 3). RGI7 outlines are shown 
 in red, while lake outlines are shown in white. (a) Eklutna Glacier 
 (RGI2000-v7.0-G-01-10928) in Alaska.Landsat image acquired 1999-07-31. (b) Unnamed 
@@ -61,8 +61,8 @@ in South Asia West (region 14). Landsat image acquired 2000-09-11.
 
 ![](figures/Fig5_AreaDistribution.png)
 **Fig. 5**: (a) Number of glaciers per size category (log), for all glaciers in RGI7, and for
-each lake-terminating level. (b) Fraction of glaciers per size category (log),for all glaciers
-in RGI7, and for each lake-terminating level. (c) Relative area of lake-terminating glaciers 
+each lake-terminating category. (b) Fraction of glaciers per size category (log),for all glaciers
+in RGI7, and for each lake-terminating category. (c) Relative area of lake-terminating glaciers 
 per RGI region. Bars are labeled with the total area (in km²) of lake-terminating glaciers 
 for each region.
 
@@ -81,7 +81,7 @@ as lake-terminating level 1 and 2 (%).
 (a) proportion of global number lake-terminating glaciers, and (b) proportion of global
 lake-terminating glacier area. RGI region numbers, with the percent attributable to that
 region shown within the chart. Lake-terminating glaciers are here defined as those with 
-Level 1 or Level 2 termini. Regions with <2% of the global total are combined into 
+Category 3 or 2 termini. Regions with <2% of the global total are combined into 
 the "all others" category.
 
 &nbsp;
