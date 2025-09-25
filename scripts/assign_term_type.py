@@ -40,13 +40,13 @@ for reg in regions:
         # only set the terminus type where it has not already been set
         not_set = lakeflags['term_type'] == 9
 
-        # lake_level 1 or 2 is defined as lake-terminating
-        is_lake = lakeflags['lake_level'].isin([1, 2])
-        is_land = lakeflags['lake_level'].isin([0, 3])
+        # lake_cat 2 or 3 is defined as lake-terminating
+        is_lake = lakeflags['lake_cat'].isin([2, 3])
+        is_land = lakeflags['lake_cat'].isin([0, 1])
 
         # some regions have mapped marine-terminating and shelf-terminating glaciers
-        is_shelf = lakeflags['lake_level'] == 98
-        is_marine = lakeflags['lake_level'] == 99
+        is_shelf = lakeflags['lake_cat'] == 98
+        is_marine = lakeflags['lake_cat'] == 99
 
         lakeflags.loc[not_set & is_land, 'term_type'] = 0 # set land-terminating
         lakeflags.loc[not_set & is_marine, 'term_type'] = 1 # set marine-terminating

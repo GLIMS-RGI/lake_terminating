@@ -56,7 +56,7 @@ def main():
                             how='inner')
 
     outlines_nobuff = outlines[['geometry', 'rgi_id', 'term_type']].copy()
-    outlines_nobuff['lake_level'] = ''
+    outlines_nobuff['lake_cat'] = ''
     outlines_nobuff['img_id'] = ''
     outlines_nobuff['img_date'] = ''
     outlines_nobuff['inv_doi'] = ''
@@ -73,7 +73,7 @@ def main():
                           how='inner')
 
     outlines_buff = outlines[['geometry', 'rgi_id', 'term_type']].copy()
-    outlines_buff['lake_level'] = ''
+    outlines_buff['lake_cat'] = ''
     outlines_buff['img_id'] = ''
     outlines_buff['img_date'] = ''
     outlines_buff['inv_doi'] = ''

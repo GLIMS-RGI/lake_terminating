@@ -80,8 +80,8 @@ def main():
     duplicated = combined.loc[combined['rgi_id'].isin(dup_ids)]
 
     # split duplicates into conflicts, agreement based on lake level
-    conflicts = duplicated.loc[~duplicated.duplicated(['rgi_id', 'lake_level'], keep=False)].sort_values('rgi_id')
-    agreed = duplicated.loc[duplicated.duplicated(['rgi_id', 'lake_level'], keep=False)].sort_values('rgi_id')
+    conflicts = duplicated.loc[~duplicated.duplicated(['rgi_id', 'lake_cat'], keep=False)].sort_values('rgi_id')
+    agreed = duplicated.loc[duplicated.duplicated(['rgi_id', 'lake_cat'], keep=False)].sort_values('rgi_id')
 
     # if there are conflicts (different lake level), save these to a file for review
     if len(conflicts) > 0:
