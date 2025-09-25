@@ -35,7 +35,7 @@ def get_hex_gdf(glacs):
     return hex_gdf.dropna(subset=['count'])
 
 
-base_url = 'https://github.com/GLIMS-RGI/lake_terminating/raw/refs/heads/main/tables/RGI2000-v7.0-G-'
+base_url = Path('..', 'dataset')
 
 regions = ['01_alaska', '02_western_canada_usa', '03_arctic_canada_north', '04_arctic_canada_south',
            '05_greenland_periphery', '06_iceland', '07_svalbard_jan_mayen', '08_scandinavia', '09_russian_arctic',
@@ -49,7 +49,7 @@ lake_flags = []
 coords = []
 
 for reg in regions:
-    lake_flags.append(pd.read_csv(base_url + reg + '_lakeflag.csv').set_index('rgi_id'))
+    lake_flags.append(pd.read_csv(Path(base_url, f"RGI2000-v7.0-G-{reg}_lakeflag.csv")).set_index('rgi_id'))
     outlines = gpd.read_file(Path('rgi', 'RGI2000-v7.0-G-' + reg,
                                   'RGI2000-v7.0-G-' + reg + '.shp')).set_index('rgi_id')
 
@@ -61,7 +61,7 @@ coords = pd.concat(coords)
 coords['geometry'] = gpd.points_from_xy(coords['cenlon'], coords['cenlat'], crs='epsg:4326')
 coords = gpd.GeoDataFrame(coords)
 
-lake_flags = lake_flags.loc[lake_flags['lake_level'].isin([1, 2])].join(coords)
+lake_flags = lake_flags.loc[lake_flags['lake_cat'].isin([2, 3])].join(coords)
 lake_flags = gpd.GeoDataFrame(lake_flags)
 
 binned = get_hex_gdf(coords)
