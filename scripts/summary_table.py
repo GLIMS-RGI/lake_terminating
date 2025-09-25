@@ -5,7 +5,7 @@ import geopandas as gpd
 import tools
 
 
-region_csvs = sorted(glob('*lakeflag.csv', root_dir='tables'))
+region_csvs = sorted(glob('*lakeflag.csv', root_dir='dataset/csv'))
 
 cats = [0, 1, 2, 3, 98, 99]
 
@@ -23,7 +23,7 @@ cat_dict = {'cat0': [], 'cat0area': [],
 for fn_csv in region_csvs:
     region, name = fn_csv.split('RGI2000-v7.0-G-')[1].split('_lakeflag')[0].split('_', maxsplit=1)
 
-    lakeflags = pd.read_csv(Path('tables', fn_csv))
+    lakeflags = pd.read_csv(Path('dataset', 'csv', fn_csv))
     outlines = gpd.read_file(tools.rgi_loader('rgi', fn_csv.split('_lakeflag')[0]))
 
     lakeflags = lakeflags.merge(outlines[['rgi_id', 'area_km2']], left_on='rgi_id', right_on='rgi_id')
@@ -54,4 +54,4 @@ global_counts.loc['global'] = total
 count_cols = ['numglac'] + [f"cat{cat}" for cat in cats]
 global_counts[count_cols] = global_counts[count_cols].astype(int)
 
-global_counts.to_csv(Path('tables', 'regional_summary.csv'))
+global_counts.to_csv(Path('dataset', 'regional_summary.csv'))
