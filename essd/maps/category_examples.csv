@@ -1,4 +1,4 @@
-rgi_id,level,image_id,region,lake_inventory
+rgi_id,category,image_id,region,lake_inventory
 RGI2000-v7.0-G-01-16980,1,LE07_L1TP_060019_20000810_20200917_02_T1,01_alaska,https://doi.org/10.18739/A2MK6591G
 RGI2000-v7.0-G-01-10684,1,LE07_L1TP_068017_19990731_20200918_02_T1,01_alaska,https://doi.org/10.18739/A2MK6591G
 RGI2000-v7.0-G-01-08014,1,LE07_L1TP_069018_20000809_20200917_02_T1,01_alaska,https://doi.org/10.18739/A2MK6591G
