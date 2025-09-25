@@ -11,7 +11,7 @@ the lakes increase glacier mass loss due to calving, dynamic thinning and increa
 (e.g., King et al. 2019; Tsutaki et al. 2011; 2019; Pronk et al. 2021; Main et al., 2023). Moreover, they impact 
 geodetic mass balance calculations as satellites cannot measure subaqueous mass loss (Zhang et al. 2023).
 
-### Motivation
+## Motivation
 
 The main aim of this effort is to determine whether a glacier is lake-terminating for the general attribute table
 of the Randolph Glacier Inventory (RGI). Uncertain (in case the existence is possible but cannot be determined due to 
@@ -26,6 +26,50 @@ receive future attention.
 
 These illustrated guidelines will describe the general methodology and provide information about how to decide whether 
 a glacier is lake-terminating and how to assess connectivity level to provide consistent attribution for the RGI table.
+
+## Dataset
+
+The `dataset/` folder has the following structure:
+
+```commandline
+dataset/
+├─ contributor_files/
+    └─ RGI-v7.0-G-{region}/
+        ├─ RGI-v7.0-G-{region}_{contributor}.csv
+├─ csv/
+    └─ RGI-v7.0-G-{region}_lakeflag.csv
+├─ lakeflags/
+    └─ RGI-v7.0-G-{region}_lakeflag.gpkg
+└─ outlines/
+    └─ RGI-v7.0-G-{region}_laketerminating.gpkg
+```
+
+Where:
+- `contributor_files/` contains all of the original/individual submissions provided by different contributors
+- `csv/` contains a `.csv` file for each RGI region
+- `lakeflags/` contains a `.gpkg` file for each RGI region, with the geometry set to the RGI7 centroid latitude/longitude
+- `outlines/` contains a `.gpkg` file for each RGI region, with the geometry set to the RGI7 outline, but only for
+  glaciers categorized as lake-terminating category 1-3.
+
+Each of the files in the dataset folders contains the following fields:
+- `rgi_id` - the RGI7 ID for the glacier;
+- `lake_cat` - the lake-terminating category for the glacier, as defined below;
+- `image_id` - the ID of the image that was used to classify each glacier;
+- `image_date` - the date (or date range) of the image used to classify each glacier;
+- `inventory_doi` - the DOI of the lake inventory (if used)
+- `contributor` - the ID of the contributor(s) who classified the glacier
+- `notes` - any additional notes from each contributor
+
+The `.gpkg` files contained in the `lakeflags/` and `outlines/` directories are generated from the `.csv` files and the
+RGI outlines using `scripts/generate_geopackage.py`.
+
+## Contributing
+
+The classifications provided here are the result of a community effort, which means that there may be disagreement 
+between analysts. If you find any such issues, we invite you to submit your updates/corrections by first forking this
+repository and submitting a Pull Request (https://github.com/GLIMS-RGI/lake_terminating/pulls).
+
+Alternatively, you are welcome to open an issue for further discussion (https://github.com/GLIMS-RGI/lake_terminating/issues). 
 
 ## 1. Definition and categories of lake-terminating glaciers
 
