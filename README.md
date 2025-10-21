@@ -62,7 +62,7 @@ See Examples 12-15:
   </tr>
 </table>
 
-### Lake-terminating glacier Category 1: lake is <ins>possibly</ins> relevant for glacier behvaiour
+### Lake-terminating glacier Category 1:
 
 The glacier tongue is in contact with one or more small lakes (area > 0.01 km<sup>2</sup>) that collectively are in 
 contact with <~10% of the terminal perimeter. Glaciers in this lake-terminating confidence level will have a lake(s) 
@@ -80,7 +80,7 @@ should be included in this category. See Exampes 8 and 9:
   </tr>
 </table>
 
-### Lake-terminating glacier Category 2: lake is <ins>probably</ins> relevant for glacier behavior
+### Lake-terminating glacier Category 2:
 
 The glacier is definitely in direct contact with a lake that spans only a smaller part (clearly less than 50% but more 
 than 10%) of the terminus, or with one or more lakes that occur at the side. Glaciers in this lake-terminating 
@@ -102,7 +102,7 @@ it is less certain than in Category 1 cases. See Examples 5-7:
   </tr>
 </table>
 
-### Lake-terminating glacier Category 3: lake is <ins>definitely</ins> relevant for glacier behavior
+### Lake-terminating glacier Category 3:
 
 The glacier is definitely in direct contact with a large lake that spans at least  ~50% of the glacier terminus. Lakes 
 smaller than 0.01 km<sup>2</sup> should not be considered. Glaciers in this lake-terminating confidence level will have 
