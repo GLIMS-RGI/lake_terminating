@@ -74,7 +74,7 @@ def add_scalebar(ax):
 sns.set_theme(font_scale=1.5, style="white")
 sns.set_style('ticks')  # white style with tick marks
 
-examples = pd.read_csv(Path('maps', 'level_examples.csv')).set_index('rgi_id')
+examples = pd.read_csv(Path('maps', 'category_examples.csv')).set_index('rgi_id')
 
 glaciers = gpd.GeoDataFrame(pd.concat(
     [gpd.read_file(Path('rgi', f"RGI2000-v7.0-G-{reg}", f"RGI2000-v7.0-G-{reg}.shp")) for reg in examples.region.unique()],
@@ -86,13 +86,13 @@ termini['geometry'] = gpd.points_from_xy(glaciers.termlon, glaciers.termlat, crs
 
 lakes = gpd.read_file(Path('maps', 'lake_outlines.gpkg'))
 
-for num, level in enumerate([1, 2, 3, 0]):
+for num, level in enumerate([3, 2, 1, 0]):
     fig, axs = plt.subplots(2, 2, figsize=(10, 10))
 
-    this_level = examples.loc[examples['level'] == level].index
+    this_level = examples.loc[examples['category'] == level].index
     axdict = dict(zip(this_level, axs.flatten()))
 
-    for glac, row in examples.loc[examples['level'] == level].iterrows():
+    for glac, row in examples.loc[examples['category'] == level].iterrows():
         fn_img = examples.loc[glac, 'image_id']
 
         img = gu.Raster(Path('maps', fn_img + '_pan_swir.tif'))
@@ -147,4 +147,4 @@ for num, level in enumerate([1, 2, 3, 0]):
 
     plt.subplots_adjust(hspace=0.05, wspace=0.05)
 
-    fig.savefig(Path('figures', f"Fig{num+1}_Level_{level}_Examples.png"), bbox_inches='tight', dpi=400)
+    fig.savefig(Path('figures', f"Fig{num+1}_Category_{level}_Examples.png"), bbox_inches='tight', dpi=400)

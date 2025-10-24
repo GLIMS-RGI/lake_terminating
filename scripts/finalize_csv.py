@@ -35,9 +35,9 @@ def main():
     if args.doi is not None:
         outlines['inv_doi'] = args.doi
 
-    # drop any null lake_level values, then ensure that this column is an integer
-    outlines.dropna(subset=['lake_level'], inplace=True)
-    outlines['lake_level'] = outlines['lake_level'].astype(int)
+    # drop any null lake_cat values, then ensure that this column is an integer
+    outlines.dropna(subset=['lake_cat'], inplace=True)
+    outlines['lake_cat'] = outlines['lake_cat'].astype(int)
 
     # change the column names since we're not bound by esri rules with the csv
     outlines.rename(columns={'term_type': 'auto_term', 'inv_doi': 'inventory_doi',

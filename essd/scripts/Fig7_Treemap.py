@@ -8,7 +8,7 @@ import squarify
 
 
 # load the regional summary from github
-csv_url = 'https://raw.githubusercontent.com/GLIMS-RGI/lake_terminating/refs/heads/main/tables/regional_summary.csv'
+csv_url = Path('..', 'dataset', 'regional_summary.csv')
 data = pd.read_csv(csv_url)
 data = data.loc[data['region'] != 'global']
 
@@ -21,16 +21,16 @@ fig_data['region'] = fig_data['region'].str.pad(2, fillchar='0')
 # get the total area for each region
 fig_data['area'] = data[[c for c in data.columns if 'area' in c]].sum(axis=1)
 
-# differentiate between lake-terminating (level 1, 2) and not lake-terminating (0, 3, 98, 99)
-is_lake = [1, 2]
-not_lake = [0, 3, 98, 99]
+# differentiate between lake-terminating (level 3, 2) and not lake-terminating (0, 1, 98, 99)
+is_lake = [3, 2]
+not_lake = [0, 1, 98, 99]
 
 # calculate the number and area of lake-terminating and not lake-terminating glaciers for each region
-fig_data['lake_num'] = data[[f"level{ii}" for ii in is_lake]].sum(axis=1)
-fig_data['lake_area'] = data[[f"level{ii}area" for ii in is_lake]].sum(axis=1)
+fig_data['lake_num'] = data[[f"cat{ii}" for ii in is_lake]].sum(axis=1)
+fig_data['lake_area'] = data[[f"cat{ii}area" for ii in is_lake]].sum(axis=1)
 
-fig_data['not_lake_num'] = data[[f"level{ii}" for ii in not_lake]].sum(axis=1)
-fig_data['not_lake_area'] = data[[f"level{ii}area" for ii in not_lake]].sum(axis=1)
+fig_data['not_lake_num'] = data[[f"cat{ii}" for ii in not_lake]].sum(axis=1)
+fig_data['not_lake_area'] = data[[f"cat{ii}area" for ii in not_lake]].sum(axis=1)
 
 # split off small regions by number, area:
 thresh = 0.02 # cutoff of 2% of global total of lake-terminating glaciers

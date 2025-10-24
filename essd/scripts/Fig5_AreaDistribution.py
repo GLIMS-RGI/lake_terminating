@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 
 
-base_url = 'https://github.com/GLIMS-RGI/lake_terminating/raw/refs/heads/main/tables/RGI2000-v7.0-G-'
+base_url = Path('..', 'dataset', 'csv')
 
 regions = ['01_alaska', '02_western_canada_usa', '03_arctic_canada_north', '04_arctic_canada_south',
            '05_greenland_periphery', '06_iceland', '07_svalbard_jan_mayen', '08_scandinavia', '09_russian_arctic',
@@ -24,7 +24,7 @@ lake_flags = []
 areas = []
 
 for reg in regions:
-    lake_flags.append(pd.read_csv(base_url + reg + '_lakeflag.csv').set_index('rgi_id'))
+    lake_flags.append(pd.read_csv(Path(base_url, f"RGI2000-v7.0-G-{reg}_lakeflag.csv")).set_index('rgi_id'))
     outlines = gpd.read_file(Path('rgi', 'RGI2000-v7.0-G-' + reg,
                                   'RGI2000-v7.0-G-' + reg + '.shp')).set_index('rgi_id')
 
@@ -40,19 +40,18 @@ lake_flags['region'] = lake_flags['rgi_id'].str.split('-', expand=True)[3]
 
 regional_vals = pd.DataFrame()
 regional_vals['total_area'] = lake_flags.groupby('region')['area'].sum()
-regional_vals['lake_area'] = lake_flags.loc[lake_flags['lake_level'].isin([1, 2])].groupby('region')['area'].sum()
+regional_vals['lake_area'] = lake_flags.loc[lake_flags['lake_cat'].isin([2, 3])].groupby('region')['area'].sum()
 regional_vals['pct_area'] = 100 * regional_vals['lake_area'] / regional_vals['total_area']
 regional_vals.index = names
 
 bins = np.logspace(-2, 3, 100)
-#dens_lake, _ = np.histogram(lake_flags.loc[lake_flags['lake_level'].isin([1, 2]), 'area'], bins)
 
 densities = dict()
 densities['all'], _ = np.histogram(lake_flags['area'], bins)
-densities['level0'], _ = np.histogram(lake_flags.loc[lake_flags['lake_level'].isin([0]), 'area'], bins)
-densities['level1'], _ = np.histogram(lake_flags.loc[lake_flags['lake_level'].isin([1]), 'area'], bins)
-densities['level2'], _ = np.histogram(lake_flags.loc[lake_flags['lake_level'].isin([2]), 'area'], bins)
-densities['level3'], _ = np.histogram(lake_flags.loc[lake_flags['lake_level'].isin([3]), 'area'], bins)
+densities['cat0'], _ = np.histogram(lake_flags.loc[lake_flags['lake_cat'].isin([0]), 'area'], bins)
+densities['cat1'], _ = np.histogram(lake_flags.loc[lake_flags['lake_cat'].isin([1]), 'area'], bins)
+densities['cat2'], _ = np.histogram(lake_flags.loc[lake_flags['lake_cat'].isin([2]), 'area'], bins)
+densities['cat3'], _ = np.histogram(lake_flags.loc[lake_flags['lake_cat'].isin([3]), 'area'], bins)
 
 for lev, dens in densities.items():
     densities[lev] = dens * 1.
@@ -77,15 +76,15 @@ axs.append(fig.add_subplot(gs[0, 0]))
 axs.append(fig.add_subplot(gs[0, 1]))
 axs.append(fig.add_subplot(gs[1, :]))
 
-labels = {'all': 'All', 'level0': 'Level 0', 'level1': 'Level 1',
-          'level2': 'Level 2', 'level3': 'Level 3'}
+labels = {'all': 'All', 'cat0': 'Category 0', 'cat1': 'Category 1',
+          'cat2': 'Category 2', 'cat3': 'Category 3'}
 
-markers = ['o', 's', 'D', '^', 'X']
-colors = ['#7a0177', '#a1dab4', '#253494', '#2c7fb8', '#41b6c4']
+markers = ['o', 's', 'X', '^', 'D']
+colors = ['#7a0177', '#a1dab4', '#41b6c4', '#2c7fb8', '#253494']
 
 for data, ax in zip([densities, fractions], axs[:2]):
-    for lev, vals, marker, col in zip(data.keys(), data.values(), markers, colors):
-        ax.plot(bins[:-1], vals, marker=marker, color=col, label=labels[lev], linewidth=2)
+    for cat, vals, marker, col in zip(data.keys(), data.values(), markers, colors):
+        ax.plot(bins[:-1], vals, marker=marker, color=col, label=labels[cat], linewidth=2)
     ax.set_xscale('log')
     ax.set_yscale('log')
 

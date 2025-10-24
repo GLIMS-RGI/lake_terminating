@@ -3,22 +3,20 @@
 Written by William Armstrong and Tobias Bolch with contributions from Robert McNabb, Rodrigo Aguayo, Fabien Maussion, 
 Jakob Steiner, and Will Kochtitzky
 
-Introductory zoom call (March 4, 2024) where we introduce our main objectives of this work discuss this framework is
-available [via this link](https://une.zoom.us/rec/share/vGTjgvBWwBtk3-25jqEh7JCZQtDQEgWg0MZvh3XTHxFyMNR3F3yphsN1FZPwk_kD.HtXAJMD-WNDgmdCX).
+Introductory zoom call (March 4, 2024) where we introduce our main objectives of this work discuss this framework is available here:  https://une.zoom.us/rec/share/vGTjgvBWwBtk3-25jqEh7JCZQtDQEgWg0MZvh3XTHxFyMNR3F3yphsN1FZPwk_kD.HtXAJMD-WNDgmdCX
 
 Knowledge about the existence of lakes which are in contact with glaciers is a fundamental importance to understand as
 the lakes increase glacier mass loss due to calving, dynamic thinning and increased mass loss at the ice-water interface
-(e.g., [King et al. 2019](https://doi.org/10.1038/s41598-019-53733-x); [Tsutaki et al. 2011](https://doi.org/10.3189/172756411797252194); [2019](https://doi.org/10.5194/tc-13-2733-2019); [Pronk et al. 2021](https://doi.org/10.5194/tc-15-5577-2021); [Main et a., 2023](https://doi.org/10.1017/jog.2022.114). Moreover, they impact geodetic mass balance 
-calculations as satellites cannot measure subaqueous mass loss ([Zhang et al. 2023](https://doi.org/10.1038/s41561-023-01150-1)).
-  
+(e.g., King et al. 2019; Tsutaki et al. 2011; 2019; Pronk et al. 2021; Main et a., 2023). Moreover, they impact geodetic mass balance 
+calculations as satellites cannot measure subaqueous mass loss (Zhang et al. 2023).
+
 ### Motivation
 
 The main aim of this effort is to determine whether a glacier is lake-terminating for the general attribute table
 of the Randolph Glacier Inventory (RGI). Uncertain (in case the existence is possible but cannot be determined due to 
 unsuitable images) or specific cases (e.g. if a lake is only in contact with a small part of the lake termini) shall 
 also be documented. In cases where a glacier is found to be lake-terminating, we seek to provide a qualitative 
-“connectivity level” evaluation (akin to [Rastner et al., 2012](https://doi.org/10.5194/tc-6-1483-2012)) that users can 
-further parse depending on their needs.
+“connectivity level” evaluation (akin to Rastner et al., 2012) that users can further parse depending on their needs.
 
 Secondary aims that can partially addressed with this inventory are a classification of morphologies of lake-terminating
 versus non-lake-terminating glaciers and the provision of a baseline to identify hotspots where cryosphere risks 
@@ -26,138 +24,121 @@ related to potentially expanding lakes (e.g. glacial lake outburst floods) as we
 receive future attention. 
 
 These illustrated guidelines will describe the general methodology and provide information about how to decide whether 
-a glacier is lake-terminating and how to assess the lake-terminating connectivity category to provide consistent
-attribution for the RGI table.
-
-## Dataset
-
-The `dataset/` folder has the following structure:
-
-```
-dataset/
-├─ contributor_files/
-    └─ RGI-v7.0-G-{region}/
-        ├─ RGI-v7.0-G-{region}_{contributor}.csv
-├─ csv/
-    └─ RGI-v7.0-G-{region}_lakeflag.csv
-├─ lakeflags/
-    └─ RGI-v7.0-G-{region}_lakeflag.gpkg
-└─ outlines/
-    └─ RGI-v7.0-G-{region}_laketerminating.gpkg
-```
-
-Where:
-- `contributor_files/` contains all of the original/individual submissions provided by different contributors
-- `csv/` contains a `.csv` file for each RGI region
-- `lakeflags/` contains a `.gpkg` file for each RGI region, with the geometry set to the RGI7 centroid latitude/longitude
-- `outlines/` contains a `.gpkg` file for each RGI region, with the geometry set to the RGI7 outline, but only for
-  glaciers categorized as lake-terminating category 1-3.
-
-Each of the files in the dataset folders contains the following fields:
-- `rgi_id` - the RGI7 ID for the glacier;
-- `lake_cat` - the lake-terminating category for the glacier, as defined below;
-- `image_id` - the ID of the image that was used to classify each glacier;
-- `image_date` - the date (or date range) of the image used to classify each glacier;
-- `inventory_doi` - the DOI of the lake inventory (if used)
-- `contributor` - the ID of the contributor(s) who classified the glacier
-- `notes` - any additional notes from each contributor
-
-The `.gpkg` files contained in the `lakeflags/` and `outlines/` directories are generated from the `.csv` files and the
-RGI outlines using `scripts/generate_geopackage.py`.
-
-## Contributing
-
-The classifications provided here are the result of a community effort, which means that there may be disagreement 
-between analysts. If you find any such issues, we invite you to submit your updates/corrections by first forking this
-repository and submitting a Pull Request (https://github.com/GLIMS-RGI/lake_terminating/pulls).
-
-Alternatively, you are welcome to open an issue for further discussion (https://github.com/GLIMS-RGI/lake_terminating/issues). 
+a glacier is lake-terminating and how to assess connectivity level to provide consistent attribution for the RGI table.
 
 ## 1. Definition and categories of lake-terminating glaciers
 
 For determining whether a glacier is lake-terminating, your guiding question should be “does the glacier end in a 
 lake(s) large enough to have the potential to significantly increase the glacier’s mass loss and/or alter glacier 
-dynamics?”. This is an inherently subjective determination, and we have developed three category definitions (described 
+dynamics?”. This is an inherently subjective determination, and we have developed three confidence levels (described 
 below) to promote consistent determination of lake-terminating status across contributors. If you answer “definitely”, 
-“probably”, or “possibly” to the question above, you will place it in one of the lake-terminating glacier categories. 
-If you answer “no” or “not likely”, this glacier should be considered land- or marine-terminating.
+“probably”, or “possibly” to the question above, you will place it in one of the lake-terminating glacier confidence 
+levels. If you answer “no” or “not likely”, this glacier should be considered land- or marine-terminating.
 
-### Lake-terminating glacier Category 3: lake is in direct contact with **> 50%** of the glacier terminus
+### Lake-terminating glacier Level 1: lake is <ins>definitely</ins> relevant for glacier behavior
 
-The glacier is in direct contact with a lake that spans at least 50 % of the terminal perimeter (planimetric length of 
-the glacier terminus), based on a visual assessment. Glaciers in this category have a lake that is large
-enough relative to the glacier width/terminal perimeter to have a visible impact on the glacier. Visual indicators of
-this category may include a calving front, crevasses, and/or icebergs.
+The glacier is definitely in direct contact with a large lake that spans at least  ~50% of the glacier terminus. Lakes 
+smaller than 0.01 km<sup>2</sup> should not be considered. Glaciers in this lake-terminating confidence level will have 
+a lake that is large enough (relative to the glacier width/terminal perimeter) that it very likely is capable of 
+affecting upstream glacier mass loss and flow dynamics. See Examples 1-4:
 
-![Fig1_Level_1_Examples.png](essd/figures/Fig1_Level_1_Examples.png)
-*Background images are Landsat 7 ETM+ false-color composites (bands 5, 4, 3). RGI7 outlines are shown in red, while lake 
-outlines are shown in white. (a) Alsek Glacier (RGI2000-v7.0-G-01-16980) in Alaska (region 01). Landsat image acquired 
-2000-08-10. (b) Knik Glacier (RGI2000-v7.0-G-01-10684) in Alaska (region 01). Landsat image acquired 1999-07-31. 
-(c) Skilak Glacier (RGI2000-v7.0-G-01-08014) in Alaska (region 01). Landsat image acquired 2000-08-09. 
-(d) Lhotse Shar Glacier (RGI2000-v7.0-G-15-06763) in South Asia East (region 15). Landsat image acquired 2000-10-30.*
+<table style="width: 800">
+  <colgroup>
+    <col span="1" style="width: 50%;">
+    <col span="1" style="width: 50%;">
+  </colgroup>
+  <tr>
+    <td style="vertical-align: top;"><img width=400 src="examples/skilak.png"><br><b>Example 1:</b> Level 1 lake-terminating glacier, example 1: Skilak Glacier in Alaska. The RGI 7.0 outline (blue) intersects the 2000 lake outline (red), with the entire terminus in contact with the proglacial lake. The base image is from 2018 and the lake outline is from Rick et al. (2022)</td>
+    <td style="vertical-align: top;"><img width=400 src="examples/imje_lhotse_share.png"><br><b>Example 2:</b> Level 1 lake-terminating glacier, example 2: Imje/Lhotse Shar Glacier, Khumbu Himalaya.</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;"><img width=400 src="examples/knik.png"><br> <b>Example 3:</b> A level 1 lake-terminating  glacier (Knik Glacier, Alaska), where ~50% of the glacier terminus is in visible contact with a proglacial lake. The terminus appears fairly flat, features prominent rifts extending from the lake, and further glacier retreat seems likely to result in lake expansion, suggesting a deep and dynamically-relevant lake.</td>
+    <td style="vertical-align: top;"><img width=400 src="examples/alsek.png"><br> <b>Example 4:</b> A collection of Level 1 lake-terminating glaciers ending in Alsek Lake, Alaska. The entirety of each glacier’s terminus is in contact with lake water.</td>
+  </tr>
+</table>
 
-### Lake-terminating glacier Category 2: lake is in direct contact with **< 50%** of the glacier terminus
+### Lake-terminating glacier Level 2: lake is <ins>probably</ins> relevant for glacier behavior
 
-The glacier is in direct contact with a lake that spans a smaller part (clearly less than 50 % but more than 10 % by 
-visual assessment) of the terminus, or with one or more disjointed lakes that occur along the glacier margin. Potential 
-indicators of this category included a calving front, crevasses, and/or icebergs, but are less certain than in 
-Category 3 cases.
+The glacier is definitely in direct contact with a lake that spans only a smaller part (clearly less than 50% but more 
+than 10%) of the terminus, or with one or more lakes that occur at the side. Glaciers in this lake-terminating 
+confidence level will have terminal lakes that may be relevant for upstream glacier mass loss and flow dynamics, but 
+it is less certain than in Level 1 cases. See Examples 5-7:
 
-![Fig2_Level_2_Examples.png](essd/figures/Fig2_Level_2_Examples.png)![]()
-*Background images are Landsat 7 ETM+ false-color composites (bands 5, 4, 3). RGI7 outlines are shown in red, while lake
-outlines are shown in white. (a) Malaspina (Sít' Tlein) Glacier (RGI2000-v7.0-G-01-15261) in Alaska (region 01). Landsat
-image acquired 2000-09-09. (b) Russel Glacier (RGI2000-v7.0-G-01-16437) in Alaska (region 01). Landsat image acquired
-2000-08-31. (c) Inilchek Glacier (RGI2000-v7.0-G-13-28434) in Central Asia (region 13). Landsat image acquired
-2000-09-13. The main lake is not in the regional lake inventory but is visible in satellite imagery (and a known lake
-that is present most of the time but repeatedly drains as a glacial lake outburst flood). (d) Middle Fork Glacier
-(RGI2000-v7.0-G-01-06125) in Alaska (region 01). Landsat image acquired 1999-08-11.*
+<table style="width: 800">
+  <colgroup>
+    <col span="1" style="width: 50%;">
+    <col span="1" style="width: 50%;">
+  </colgroup>
+  <tr>
+    <td style="vertical-align: top;"><img width=400 src="examples/malaspina.png"><br><b>Example 5:</b> Malaspina Glacier (Alaska) has several large lakes at the terminus, but the majority of the terminus is in contact with land.</td>
+    <td style="vertical-align: top;"><img width=400 src="examples/inylchek.png"><br><b>Example 6:</b> Southern Inylchek Glacier, Kyrgyzstan. The end of the tongue is land-terminating. However, a large part of the active tongue is flowing towards a lake, impacting the glacier behavior.</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;"><img width=400 src="examples/russell.png"><br><b>Example 7:</b> Russell Glacier (Alaska) has a large (relative to the glacier width) lake near the terminus that spans <50% of the terminal perimeter.</td>
+    <td style="vertical-align: top;"></td>
+  </tr>
+</table>
 
-### Lake-terminating glacier Category 1: lake/s is in direct contact with **< 10% of the glacier terminus
+### Lake-terminating glacier Level 3: lake is <ins>possibly</ins> relevant for glacier behvaiour
 
-The glacier is in contact with one or more small lakes (area >0.01 km<sup>2</sup>) that collectively are in contact with
-<10 % of the terminal perimeter. Glaciers in this category do not have visible impacts due to the lake 
-except along a very limited (<10 %) portion of the terminus. Cases that are unclear but likely are also included in this 
-category. Additionally, we included cases where glaciers have multiple or unclear termini (e.g. ice cap margins) in this
-category, if expert judgment considered the adjacent lakes not relevant for glacier dynamics.
+The glacier tongue is in contact with one or more small lakes (area > 0.01 km<sup>2</sup>) that collectively are in 
+contact with <~10% of the terminal perimeter. Glaciers in this lake-terminating confidence level will have a lake(s) 
+that likely play a relatively minor role in affecting glacier mass loss and flow dynamics. Unclear but likely cases 
+should be included in this category. See Exampes 8 and 9:
 
-![Fig3_Level_3_Examples.png](essd/figures/Fig3_Level_3_Examples.png)
-*Background images are Landsat 7 ETM+ false-color composites (bands 5, 4, 3). RGI7 outlines are shown in red, while lake
-outlines are shown in white. (a) Chisana Glacier (RGI2000-v7.0-G-01-05589) in Alaska (region 01). Landsat image acquired
-1999-08-11. (b) Unnamed glacier (RGI2000-v7.0-G-01-04360) in Alaska (region 01). Landsat image acquired 2000-08-16.
-(c) Unnamed glacier (RGI2000-v7.0-G-01-16871) in Alaska (region 01). Landsat image acquired 2000-08-10. (d) Ghiaccio 
-del Cavagn (RGI2000-v7.0-G-11-02473) in Central Europe (region 11). Landsat image acquired 2000-08-28.*
-
-### Non-lake-terminating glacier Category 0: land-terminating
-
-The glacier is not lake-terminating; its terminus is almost exclusively in contact with land or the ocean, or has a 
-terminal water body that is so small as to seem inconsequential. We did not consider glaciers with supraglacial lakes 
-that have not amalgamated to form one lake spanning the majority of the glacier’s terminus to be lake-terminating. 
-
-Similarly, we did not consider glaciers with proglacial water bodies smaller than 0.01 km<sup>2</sup> to be 
-lake-terminating.
-
-![Fig4_Level_0_Examples.png](essd/figures/Fig4_Level_0_Examples.png)
-*Background images are Landsat 7 ETM+ false-color composites (bands 5, 4, 3). RGI7 outlines are shown in red, while lake
-outlines are shown in white. (a) Eklutna Glacier (RGI2000-v7.0-G-01-10928) in Alaska. Landsat image acquired 1999-07-31.
-(b) Unnamed glacier (RGI2000-v7.0-G-01-11048) in Alaska (region 01). Landsat image acquired 1999-07-31. (c) Harris
-Glacier (RGI2000-v7.0-G-01-08628) in Alaska (region 01). Landsat image acquired 2000-08-09. (d) Hispar Glacier, with 
-numerous supraglacial ponds (RGI2000-v7.0-G-14-21670) in South Asia West (region 14). Landsat image acquired 2000-09-11.
+<table style="width: 800">
+  <colgroup>
+    <col span="1" style="width: 50%;">
+    <col span="1" style="width: 50%;">
+  </colgroup>
+  <tr>
+    <td style="vertical-align: top;"><img width=400 src="examples/unnamed_alaska.png"><br><b>Example 8:</b> Scattered supraglacial lakes across the terminus area of an Alaska glacier (RGI2000-v7.0-G-01-04360), some of which have merged to form larger lakes.</td>
+    <td style="vertical-align: top;"><img width=400 src="examples/chisana.png"><br><b>Example 9:</b> Alaska’s Chisana Glacier has a small lake at its terminus, but it appears fairly shallow (terminus has convex shape into lake) and to be minimally impacting glacier behavior.</td>
+  </tr>
+</table>
 
 ### Ambiguous lake termini
 
-*Streams cutting across termini* are Category 2 in cases where the stream has a clear impact on ice melt and dynamics, 
-otherwise they should be Category 1. In panel (a) below, the terminus of Childs Glacier (Alaska) is cut across by the
-Copper River, featuring embayments where calving seems to occur. This would be considered a Category 2 lake-terminating 
-glacier. 
+*Streams cutting across termini* are Level 2 in cases where the stream has a clear impact on ice melt and dynamics, 
+otherwise they should be Level 3. See Examples 10 and 11:
 
-In panel (b), the terminus of Tweedsmuir Glacier (Yukon) is cut across by the Alsek River, but there appears to be 
-limited interaction between the river and glacier. This would be a Category 1 lake-terminating glacier.
+<table style="width: 800">
+  <colgroup>
+    <col span="1" style="width: 50%;">
+    <col span="1" style="width: 50%;">
+  </colgroup>
+  <tr>
+    <td style="vertical-align: top;"><img width=400 src="examples/childs.png"><br><b>Example 10:</b> The terminus of Childs Glacier (Alaska) is cut across by the Copper River, featuring embayments where calving seems to occur. This would be considered a Level 2 lake-terminating glacier.</td>
+    <td style="vertical-align: top;"><img width=250 src="examples/tweedsmuir.png"><br><b>Example 11:</b> The terminus of Tweedsmuir Glacier (Yukon) is cut across by the Alsek River, but there appears to be limited interaction between the river and glacier. This would be a Level 3 lake-terminating glacier. </td>
+  </tr>
+</table>
 
-![ambiguous_examples.png](examples/ambiguous_examples.png)
-*Background images are Landsat 7 ETM+ false-color composites (bands 5, 4, 3). RGI7 outlines are shown in red, while lake
-outlines are shown in white. (a) Childs Glacier (RGI2000-v7.0-G-01-11603) in Alaska (region 01). Landsat image acquired
-2000-07-03. (b) Tweedsmuir Glacier (RGI2000-v7.0-G-01-14859) in Alaska (region 01). Landsat image acquired 2000-08-10.*
+### Non-lake-terminating glacier Level 0: land-terminating
 
+A glacier that is not in direct contact with a lake. A glacier is also NOT lake-terminating, despite there being a 
+"glacial lake" close by (i.e., the lake found in landscape formerly covered by and formed glacier ice. These kinds of 
+lakes are included in several inventories).
+
+A glacier with supraglacial lakes that have not amalgamated to form one lake that spans the majority of the glacier’s 
+terminus should not be considered lake-terminating. Glaciers with proglacial water bodies smaller than 0.01 km<sup>2</sup>
+should not be considered lake-terminating. 
+
+See Examples 12-15:
+
+<table style="width: 800">
+  <colgroup>
+    <col span="1" style="width: 50%;">
+    <col span="1" style="width: 50%;">
+  </colgroup>
+  <tr>
+    <td style="vertical-align: top;"><img width=200 src="examples/harris.png"><br><b>Example 12:</b> A lake which is in the vicinity of the glaciers but not in contact with the ice. Harris Glacier, Alaska</td>
+    <td style="vertical-align: top;"><img width=400 src="examples/walsh_logan.png"><br><b>Example 13:</b> Small supraglacial ponds do NOT make a glacier lake-terminating unless they have coalesced into one or more lakes that are large relative to the glacier width and located at or very near the terminus. Walsh and Logan glaciers (Alaska).</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;"><img width=400 src="examples/klutlan.png"><br> <b>Example 14:</b> The Yukon’s Klutlan Glacier would not be considered lake-terminating. It has a small lake beyond its RGI terminus that does not appear to be in direct contact with glacier ice.</td>
+    <td style="vertical-align: top;"><img width=400 src="examples/eklutna.png"><br> <b>Example 15:</b> For completeness sake, the only water body near Alaska’s Eklutna Glacier’s terminus is its proglacial stream. It is thus not considered a lake-terminating glacier.</td>
+  </tr>
+</table>
 
 ## 2. Methodology
 
@@ -166,16 +147,16 @@ If an inventory is lacking or too far removed in time from 2000 (>10 years away)
 based on satellite imagery from 2000. If neither of these approaches are taken, all glaciers in that region are flagged 
 as ‘not assigned’ terminus type (term_type = 9).
 
-> :warning: **Important note: When in doubt, put the glacier in the higher category 
-(i.e., higher relevance; Category 2 instead of Category 1).**
+> :warning: **Important note: When in doubt, put the glacier in the lower number connectivity level 
+(i.e., higher relevance; Level 2 instead of Level 3).**
 
 > :warning: **Important note: If you reviewed a glacier or region and determined that certain glaciers 
-are definitely NOT lake-terminating (Category 0), please indicate that on your data submission (Section 3). A list that 
+are definitely NOT lake-terminating (Level 0), please indicate that on your data submission (Section 3). A list that 
 includes exclusively glaciers that are definitely not lake-terminating is helpful in its own right.**
 
 ### Workflow using existing lake inventory
 
-We have provided a Python script (`scripts/assign_flag.py`) that utilizes an existing ice-marginal 
+We have provided a Python script (`assignRgiLakeFlag_minimal.py`, included in the `scripts` folder) that utilizes an existing ice-marginal 
 lake inventory to produce a limited subset of RGI glaciers that should be manually verified for lake-terminating status.
 
 We have compiled a list of known [datasets here](https://github.com/GLIMS-RGI/lake_terminating/blob/main/Lake_databases_termini.csv).
@@ -188,29 +169,29 @@ The general workflow implemented in the script is:
    the join a `term_type` of 2 ("Lake-terminating").
 
 Contributors should then manually verify the collection of lake-terminating glaciers and assign lake-terminating relevance
-categories, based on the examples and definitions above and the following general criteria:
+levels, based on the examples above and the following general criteria:
 
-- Not lake-terminating, Category 0: The glacier is not lake-terminating; its terminus is almost exclusively in contact with
-  land (or the ocean), or has a terminal water body that is so small as to seem inconsequential for its mass loss/dynamics
-- Lake-terminating Category 1: <~10% of terminus is adjacent to lake, but there is some reason to think the lake is 
-  possibly dynamically relevant.
-- Lake-terminating Category 2: ~10 - ~50% of terminus is adjacent to lake; the lake(s) is probably relevant for glacier 
-  mass loss and dynamics
-- Lake-terminating Category 3: >~50% of terminus is adjacent to lake; the lake(s) is definitely relevant for glacier mass 
+- Lake-terminating level 1: >~50% of terminus is adjacent to lake; the lake(s) is definitely relevant for glacier mass 
   loss and dynamics
+- Lake-terminating level 2: ~10 - ~50% of terminus is adjacent to lake; the lake(s) is probably relevant for glacier 
+  mass loss and dynamics
+- Lake-terminating level 3: <~10% of terminus is adjacent to lake, but there is some reason to think the lake is 
+  possibly dynamically relevant. 
+- Not lake-terminating, level 0: The glacier is not lake-terminating; its terminus is almost exclusively in contact with
+  land (or the ocean), or has a terminal water body that is so small as to seem inconsequential for its mass loss/dynamics
 - Supraglacial lakes (lakes forming entirely on top of glacier ice) should not to be considered unless they have coalesced 
   into large water bodies than span the majority of the terminus
 - Lakes smaller than 0.01 km<sup>2</sup> should not be considered
-- Glaciers with terminus cut across by a stream should be labeled as Category 1 or 2 (see guidance under “ambiguous termini” 
+- Glaciers with terminus cut across by a stream should be labeled as Level 2 or 3 (see guidance under “ambiguous termini” 
   above)
-- When in doubt whether the glacier is in contact with a lake or not, use Category 1; if it seems more likely that the 
+- When in doubt whether the glacier is in contact with a lake or not, use level 3; if it seems more likely that the 
   glacier is not in contact but you cannot verify from the utilized image or any other image source (e.g. because of 
   clouds, snow cover, cast shadow), use the "not assigned" category (`term_type`=9)
-- Recall that a list of definitively not lake-terminating glacier (lake category = 0) is very useful in its own right
+- Recall that a list of definitively not lake-terminating glacier (lake level = 0) is very useful in its own right
 
-> :warning: **We strongly urge contributors to use the 0 - 3 lake-terminating categories defined above**, but will accept 
+> :warning: **We strongly urge contributors to use the 0 - 3 lake-terminating level categories defined above**, but will accept 
 binary submissions ("lake-terminating"/"not lake-terminating") as well. If you are performing a binary lake-terminating 
-classification, please consider the above-defined categories 3 & 2 as “yes”, and
+classification, please consider the above-defined Levels 1 & 2 as “yes”, and 
 **please make it clear in your contribution that you did a binary classification**.
 
 ### Workflow without an existing lake inventory
@@ -226,25 +207,25 @@ year 2000 as possible (within 10 years at most).
 The contributors to the lake inventory should provide a csv file with the following structure (a sample template,
 `lake_term_data_template.csv`, is provided in this repository):
 
-| `rgi_id`                | `lake_cat` |                `image_id`                | `image_date` |          `inventory_doi`           | `contributor` |
-|-------------------------|:----------:|:----------------------------------------:|:------------:|:----------------------------------:|:-------------:|
-| RGI2000-v7.0-G-01-08604 |     1      | LT05_L1TP_066017_19990927_20200907_02_T1 | 1999/09/27   | https://doi.org/10.18739/A2MK6591G |  Armstrong    |
+| `rgi_id`                | `lake_terminating_level` |                `image_id`                | `image_date` |          `inventory_doi`           | `contributor` |
+|-------------------------|:------------------------:|:----------------------------------------:|:------------:|:----------------------------------:|:-------------:|
+| RGI2000-v7.0-G-01-08604 |            1             | LT05_L1TP_066017_19990927_20200907_02_T1 | 1999/09/27   | https://doi.org/10.18739/A2MK6591G |  Armstrong    |
 
 The fields are defined as:
 
 - `rgi_id`: the glacier ID from the RGI version 7
-- `lake_cat`: the lake terminating category, as defined in the previous section
-- `image_id`: The ID of the image used to verify and/or decide about the lake-terminating category. For Landsat images,
+- `lake_terminating_level`: the lake terminating level, as defined in the previous section
+- `image_id`: The ID of the image used to verify and/or decide about the lake-terminating level. For Landsat images,
   please use the **Product Identifier**.
-- `image_date`: The acquisition date of the image used to verify and/or decide about the lake-terminating category, in 
+- `image_date`: The acquisition date of the image used to verify and/or decide about the lake-terminating level, in 
   YYYY/MM/DD format.
 - `inventory_doi`: the DOI of the lake dataset used (if exisiting), otherwise blank/NA
-- `contributor`: The name of the person(s) who checked the lake-terminating category. More than one person may be included
-  here, but the person who checked the category must be named, and not just the supervisor or data provider.
+- `contributor`: The name of the person(s) who checked the lake-terminating level. More than one person may be included
+  here, but the person who checked the level must be named, and not just the supervisor or data provider.
 
-> :warning: As stated above, **we strongly urge contributors to use the 0 - 3 lake-terminating categories defined above**, but
+> :warning: As stated above, **we strongly urge contributors to use the 0 - 3 lake-terminating level categories defined above**, but
 we are happy to accept binary submissions as well. **If you are performing a binary lake-terminating classification, 
-please consider the above-defined Categories 3 & 2 as "yes", and please make it clear in your contribution that you did 
+please consider the above-defined Levels 1 & 2 as "yes", and please make it clear in your contribution that you did 
 a binary classification**.
 
 These regional tables will be merged to produce a global table of lake-terminating glaciers that will then be merged 
