@@ -61,7 +61,7 @@ in South Asia West (region 14). Landsat image acquired 2000-09-11.
 
 ![](figures/Fig5_AreaDistribution.png)
 **Fig. 5**: (a) Number of glaciers per size category (log), for all glaciers in RGI7, and for
-each lake-terminating category. (b) Fraction of glaciers per size category (log),for all glaciers
+each lake-terminating category. (b) Fraction of glaciers per size category (log), for all glaciers
 in RGI7, and for each lake-terminating category. (c) Relative area of lake-terminating glaciers 
 per RGI region. Bars are labeled with the total area (in km²) of lake-terminating glaciers 
 for each region.
@@ -71,8 +71,8 @@ for each region.
 ![](figures/Fig6_GlobalDistribution.png)
 **Fig. 6**: Statistics aggregated to 10° hexagonal tiles. (a) Total number of glaciers according to RGI7. 
 (b) Total area of glaciers according to RGI7 (km²). (c) Percentage of glaciers classified
-as lake-terminating level 1 and level 2 (%). (d) Percentage area of glaciers with classified
-as lake-terminating level 1 and 2 (%).
+as lake-terminating Category 2 and 3 (%). (d) Percentage area of glaciers with classified
+as lake-terminating Category 2 and 3 (%).
 
 &nbsp;
 
@@ -88,4 +88,4 @@ the "all others" category.
 
 ![](figures/Fig8_TemporalDistribution.png)
 **Fig. 8**: Distribution of timestamp of imagery used to generate RGI7 outlines and for 
-classifying lake-terminating level.
+classifying lake-terminating category.
