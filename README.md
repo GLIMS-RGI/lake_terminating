@@ -8,16 +8,17 @@ available [via this link](https://une.zoom.us/rec/share/vGTjgvBWwBtk3-25jqEh7JCZ
 
 Knowledge about the existence of lakes which are in contact with glaciers is a fundamental importance to understand as
 the lakes increase glacier mass loss due to calving, dynamic thinning and increased mass loss at the ice-water interface
-(e.g., King et al. 2019; Tsutaki et al. 2011; 2019; Pronk et al. 2021; Main et al., 2023). Moreover, they impact 
-geodetic mass balance calculations as satellites cannot measure subaqueous mass loss (Zhang et al. 2023).
-
-## Motivation
+(e.g., [King et al. 2019](https://doi.org/10.1038/s41598-019-53733-x); [Tsutaki et al. 2011](https://doi.org/10.3189/172756411797252194); [2019](https://doi.org/10.5194/tc-13-2733-2019); [Pronk et al. 2021](https://doi.org/10.5194/tc-15-5577-2021); [Main et a., 2023](https://doi.org/10.1017/jog.2022.114). Moreover, they impact geodetic mass balance 
+calculations as satellites cannot measure subaqueous mass loss ([Zhang et al. 2023](https://doi.org/10.1038/s41561-023-01150-1)).
+  
+### Motivation
 
 The main aim of this effort is to determine whether a glacier is lake-terminating for the general attribute table
 of the Randolph Glacier Inventory (RGI). Uncertain (in case the existence is possible but cannot be determined due to 
 unsuitable images) or specific cases (e.g. if a lake is only in contact with a small part of the lake termini) shall 
 also be documented. In cases where a glacier is found to be lake-terminating, we seek to provide a qualitative 
-“connectivity category” evaluation (akin to Rastner et al., 2012) that users can further parse depending on their needs.
+“connectivity level” evaluation (akin to [Rastner et al., 2012](https://doi.org/10.5194/tc-6-1483-2012)) that users can 
+further parse depending on their needs.
 
 Secondary aims that can partially addressed with this inventory are a classification of morphologies of lake-terminating
 versus non-lake-terminating glaciers and the provision of a baseline to identify hotspots where cryosphere risks 
@@ -81,7 +82,7 @@ below) to promote consistent determination of lake-terminating status across con
 “probably”, or “possibly” to the question above, you will place it in one of the lake-terminating glacier categories. 
 If you answer “no” or “not likely”, this glacier should be considered land- or marine-terminating.
 
-### Lake-terminating glacier Category 3
+### Lake-terminating glacier Category 3: lake is in direct contact with **> 50%** of the glacier terminus
 
 The glacier is in direct contact with a lake that spans at least 50 % of the terminal perimeter (planimetric length of 
 the glacier terminus), based on a visual assessment. Glaciers in this category have a lake that is large
@@ -95,7 +96,7 @@ outlines are shown in white. (a) Alsek Glacier (RGI2000-v7.0-G-01-16980) in Alas
 (c) Skilak Glacier (RGI2000-v7.0-G-01-08014) in Alaska (region 01). Landsat image acquired 2000-08-09. 
 (d) Lhotse Shar Glacier (RGI2000-v7.0-G-15-06763) in South Asia East (region 15). Landsat image acquired 2000-10-30.*
 
-### Lake-terminating glacier Category 2
+### Lake-terminating glacier Category 2: lake is in direct contact with **< 50%** of the glacier terminus
 
 The glacier is in direct contact with a lake that spans a smaller part (clearly less than 50 % but more than 10 % by 
 visual assessment) of the terminus, or with one or more disjointed lakes that occur along the glacier margin. Potential 
@@ -111,7 +112,7 @@ image acquired 2000-09-09. (b) Russel Glacier (RGI2000-v7.0-G-01-16437) in Alask
 that is present most of the time but repeatedly drains as a glacial lake outburst flood). (d) Middle Fork Glacier
 (RGI2000-v7.0-G-01-06125) in Alaska (region 01). Landsat image acquired 1999-08-11.*
 
-### Lake-terminating glacier Category 1
+### Lake-terminating glacier Category 1: lake/s is in direct contact with **< 10% of the glacier terminus
 
 The glacier is in contact with one or more small lakes (area >0.01 km<sup>2</sup>) that collectively are in contact with
 <10 % of the terminal perimeter. Glaciers in this category do not have visible impacts due to the lake 
