@@ -1,6 +1,6 @@
 # Global lake-terminating glacier classification: a community effort for the Randolph Glacier Inventory (RGI) and beyond
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15814947.svg)](https://doi.org/10.5281/zenodo.15814947)
+[![DOI](https://zenodo.org/badge/764141248.svg)](https://zenodo.org/badge/latestdoi/764141248)
 
 Written by William Armstrong and Tobias Bolch with contributions from Robert McNabb, Rodrigo Aguayo, Fabien Maussion, 
 Jakob Steiner, and Will Kochtitzky
