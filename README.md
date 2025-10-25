@@ -64,6 +64,10 @@ Each of the files in the dataset folders contains the following fields:
 - `contributor` - the ID of the contributor(s) who classified the glacier
 - `notes` - any additional notes from each contributor
 
+Additionally, the `contributor_files/` may have an additional field, `auto_term`. When running
+`scripts/finalize_csv.py`, the column `term_type` (if included in the CSV) is renamed to `auto_term` to indicate that
+`scripts/assign_lake_flag.py` and there was an inventory lake within the buffer around the terminus (`auto_term == 2`)
+
 The `.gpkg` files contained in the `lakeflags/` and `outlines/` directories are generated from the `.csv` files and the
 RGI outlines using `scripts/generate_geopackage.py`.
 
