@@ -89,3 +89,11 @@ the "all others" category.
 ![](figures/Fig8_TemporalDistribution.png)
 **Fig. 8**: Distribution of timestamp of imagery used to generate RGI7 outlines and for 
 classifying lake-terminating category.
+
+&nbsp;
+
+![](figures/Fig9_Conflicts.png)
+**Fig. 9**: Examples of glaciers where operators disagreed on lake categories for eventual lake-terminating Category 3
+cases. Background images are Landsat 7 ETM+ false-color composites (bands 5, 4, 3). (a) Shudder Glacier 
+(RGI2000-v7.0-G-02-07418), mapped as both Category 3 and 2. Landsat image acquired 2000-09-23. (b) Ragnarbreen 
+(RGI2000-v7.0-G-07-00470), mapped as both Category 3 and 0. Landsat image acquired 2000-08-17.
