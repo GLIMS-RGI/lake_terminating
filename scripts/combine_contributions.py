@@ -10,10 +10,10 @@ def _argparser():
     helpstr = """
     Combine multiple reviewer contributions for a given RGI region into a single CSV, {region}_lakeflag.csv. 
     
-    Any duplicated glaciers where multiple reviewers agree on the lake connectivity level will be included in the output
-    file with their names separated by commas (e.g., Armstrong, Bolch, ...). 
+    Any duplicated glaciers where multiple reviewers agree on the lake connectivity category will be included in the
+    output file with their names separated by commas (e.g., Armstrong, Bolch, ...). 
     
-    Any duplicated glaciers where multiple reviewers do not agree on the lake connectivity level will be saved to 
+    Any duplicated glaciers where multiple reviewers do not agree on the lake connectivity category will be saved to 
     {region}_conflicts.csv for review.
     
     Any "missing" glaciers (glaciers included in the RGI region, but not in any contributor file) will be written to a 
@@ -26,8 +26,8 @@ def _argparser():
     to github.
     
     Outputs
-        - {region}_lakeflag.csv - a CSV table with all non-conflicting lake levels
-        - {region}_conflicts.csv - a CSV table with any conflicting lake levels from different contributors
+        - {region}_lakeflag.csv - a CSV table with all non-conflicting lake categories
+        - {region}_conflicts.csv - a CSV table with any conflicting lake categories from different contributors
         - {region}_missing.gpkg - a geopackage file with glacier outlines not found in any contributor file. 
 
     """
@@ -79,14 +79,14 @@ def main():
     # get all duplicated rgi ids
     duplicated = combined.loc[combined['rgi_id'].isin(dup_ids)]
 
-    # split duplicates into conflicts, agreement based on lake level
+    # split duplicates into conflicts, agreement based on lake category
     conflicts = duplicated.loc[~duplicated.duplicated(['rgi_id', 'lake_cat'], keep=False)].sort_values('rgi_id')
     agreed = duplicated.loc[duplicated.duplicated(['rgi_id', 'lake_cat'], keep=False)].sort_values('rgi_id')
 
-    # if there are conflicts (different lake level), save these to a file for review
+    # if there are conflicts (different lake category), save these to a file for review
     if len(conflicts) > 0:
         nconflicts = len(conflicts['rgi_id'].unique())
-        print(f"Found {nconflicts} disagreements on lake level. Saving to {args.rgi_region}_conflicts.csv")
+        print(f"Found {nconflicts} disagreements on lake category. Saving to {args.rgi_region}_conflicts.csv")
         conflicts.to_csv(f"{args.rgi_region}_conflicts.csv", index=False)
 
     # if there are no conflicts, combine the contributor names

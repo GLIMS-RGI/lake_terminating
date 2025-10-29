@@ -21,7 +21,7 @@ fig_data['region'] = fig_data['region'].str.pad(2, fillchar='0')
 # get the total area for each region
 fig_data['area'] = data[[c for c in data.columns if 'area' in c]].sum(axis=1)
 
-# differentiate between lake-terminating (level 3, 2) and not lake-terminating (0, 1, 98, 99)
+# differentiate between lake-terminating (category 3, 2) and not lake-terminating (0, 1, 98, 99)
 is_lake = [3, 2]
 not_lake = [0, 1, 98, 99]
 

@@ -23,13 +23,13 @@ termini['geometry'] = gpd.points_from_xy(glaciers.termlon, glaciers.termlat, crs
 
 lakes = gpd.read_file(Path('maps', 'lake_outlines.gpkg'))
 
-for num, level in enumerate([3, 2, 1, 0]):
+for num, cat in enumerate([3, 2, 1, 0]):
     fig, axs = plt.subplots(2, 2, figsize=(10, 10))
 
-    this_level = examples.loc[examples['category'] == str(level)].index
-    axdict = dict(zip(this_level, axs.flatten()))
+    this_cat = examples.loc[examples['category'] == str(cat)].index
+    axdict = dict(zip(this_cat, axs.flatten()))
 
-    for glac, row in examples.loc[examples['category'] == str(level)].iterrows():
+    for glac, row in examples.loc[examples['category'] == str(cat)].iterrows():
         fn_img = examples.loc[glac, 'image_id']
 
         img = gu.Raster(Path('maps', fn_img + '_pan_swir.tif'))
@@ -84,4 +84,4 @@ for num, level in enumerate([3, 2, 1, 0]):
 
     plt.subplots_adjust(hspace=0.05, wspace=0.05)
 
-    fig.savefig(Path('figures', f"Fig{num+1}_Category_{level}_Examples.png"), bbox_inches='tight', dpi=400)
+    fig.savefig(Path('figures', f"Fig{num+1}_Category_{cat}_Examples.png"), bbox_inches='tight', dpi=400)

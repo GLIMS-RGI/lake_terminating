@@ -142,7 +142,7 @@ that have not amalgamated to form one lake spanning the majority of the glacierâ
 Similarly, we did not consider glaciers with proglacial water bodies smaller than 0.01 km<sup>2</sup> to be 
 lake-terminating.
 
-![Fig4_Level_0_Examples.png](essd/figures/Fig4_Category_0_Examples.png)
+![](essd/figures/Fig4_Category_0_Examples.png)
 *Background images are Landsat 7 ETM+ false-color composites (bands 5, 4, 3). RGI7 outlines are shown in red, while lake
 outlines are shown in white. (a) Eklutna Glacier (RGI2000-v7.0-G-01-10928) in Alaska. Landsat image acquired 1999-07-31.
 (b) Unnamed glacier (RGI2000-v7.0-G-01-11048) in Alaska (region 01). Landsat image acquired 1999-07-31. (c) Harris
