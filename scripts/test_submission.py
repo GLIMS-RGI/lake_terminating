@@ -47,7 +47,7 @@ def test_columns():
 
     # get a list of "new" or changed files from the current branch
     repo = Repo('.')
-    diff = [item.a_path for item in repo.index.diff('main')]
+    diff = [item.a_path for item in repo.index.diff('origin/main')]
 
     new_contribs = list(set(contribs) & set(diff))
 
