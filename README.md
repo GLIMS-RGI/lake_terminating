@@ -255,7 +255,7 @@ The contributors to the lake inventory should provide a csv file with the follow
 
 | `rgi_id`                | `lake_cat` |                `image_id`                | `image_date` |          `inventory_doi`           | `contributor` |
 |-------------------------|:----------:|:----------------------------------------:|:------------:|:----------------------------------:|:-------------:|
-| RGI2000-v7.0-G-01-08604 |     1      | LT05_L1TP_066017_19990927_20200907_02_T1 | 1999/09/27   | https://doi.org/10.18739/A2MK6591G |  Armstrong    |
+| RGI2000-v7.0-G-01-08604 |     3      | LT05_L1TP_066017_19990927_20200907_02_T1 |  1999-09-27  | https://doi.org/10.18739/A2MK6591G |  Armstrong    |
 
 The fields are defined as:
 
