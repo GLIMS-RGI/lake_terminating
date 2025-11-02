@@ -75,10 +75,30 @@ RGI outlines using `scripts/generate_geopackage.py`.
 ## Contributing
 
 The classifications provided here are the result of a community effort, which means that there may be disagreement 
-between analysts. If you find any such issues, we invite you to submit your updates/corrections by first forking this
-repository and submitting a Pull Request (https://github.com/GLIMS-RGI/lake_terminating/pulls).
+between analysts. If you find any such issues, we invite you to submit your updates/corrections in one of the following
+ways, depending on your level of comfort with git/GitHub:
 
-Alternatively, you are welcome to open an issue for further discussion (https://github.com/GLIMS-RGI/lake_terminating/issues). 
+### through GitHub 
+
+1. Open an issue (https://github.com/GLIMS-RGI/lake_terminating/issues) for further discussion;
+2. Fork this repository, make your changes/updates, and open a Pull Request
+   (https://github.com/GLIMS-RGI/lake_terminating/pulls). **Please Note**: if you choose this option, ensure
+   that your updated files are placed in the relevant regional folder in `dataset/contributor_files`, rather than
+   updating the files in `dataset/csv` directly.
+
+As part of the PR process, any updated CSV files will be checked for formatting consistency. Once those checks have
+passed, the updates can be merged using the process outlined by `scripts/update_dataset.py`.
+
+You are welcome to make these changes yourself; alternatively, one of the maintainers will be able to do the final
+merge/update.
+
+### outside of GitHub
+
+Outside of GitHub, you are welcome to contact one or more of the maintainers to discuss any issues or to send along
+your proposed updates/corrections. 
+
+Please ensure that your submitted CSV file uses the same format as is found in the `lake_term_data_template.csv`
+file found in this repository, as it will greatly simplify the integration process.
 
 ## 1. Definition and categories of lake-terminating glaciers
 
