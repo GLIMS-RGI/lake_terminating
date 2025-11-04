@@ -3,6 +3,7 @@ from pathlib import Path
 from tqdm import tqdm
 import pandas as pd
 import geopandas as gpd
+from typing import Union
 
 
 rgi_regions = ['RGI2000-v7.0-G-01_alaska',
@@ -27,7 +28,14 @@ rgi_regions = ['RGI2000-v7.0-G-01_alaska',
 ]
 
 
-def rgi_loader(rgi_dir, rgi_reg):
+def rgi_loader(rgi_dir: Union[str, Path], rgi_reg: Union[str, Path]) -> Path:
+    """
+    Returns the path to the RGI 7.0 shapefile for the given region. Checks whether RGI files are stored in a single
+    directory, or in sub-directories.
+
+    :param rgi_dir: The path to the directory where the RGI files or folders are stored.
+    :param rgi_reg: The RGI 7.0 region name (e.g., RGI2000-v7.0-G-01_alaska)
+    """
     # load the RGI outlines
     if os.path.exists(Path(rgi_dir, rgi_reg + '.shp')):
         return Path(rgi_dir, rgi_reg + '.shp')
@@ -37,10 +45,14 @@ def rgi_loader(rgi_dir, rgi_reg):
         raise FileNotFoundError(f"Unable to find {rgi_reg}.shp in {rgi_dir}, or a sub-directory. Please check path and filename.")
 
 
-def generate_geopackage():
-    # iterate through csv for each region, create two additional datasets:
-    #   - dataset/lakeflags/{region}_lakeflag.gpkg, with the lakeflag CSV joined to the RGI7 centroid (all glaciers)
-    #   - dataset/outlines/{region}_laketerminating.gpkg, with outlines for only category 1-3.
+def generate_geopackage() -> None:
+    """
+    For each RGI region, create two additional datasets:
+
+    - dataset/lakeflags/{region}_lakeflag.gpkg, with the lakeflag CSV joined to the RGI7 centroid (all glaciers)
+    - dataset/outlines/{region}_laketerminating.gpkg, with outlines for lake category 1-3.
+    """
+
     for region in tqdm(rgi_regions):
         fn_csv = region + '_lakeflag.csv'
 
