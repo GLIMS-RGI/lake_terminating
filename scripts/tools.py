@@ -70,3 +70,62 @@ def generate_geopackage() -> None:
         gpd.GeoDataFrame(merged.loc[merged['lake_cat'].isin([1, 2, 3])]).to_file(
             Path('dataset', 'outlines', fn_csv.replace('lakeflag.csv', 'laketerminating.gpkg'))
         )
+
+
+def summary_table() -> None:
+    """
+    Read all regional CSVs in dataset/csv, and write a table summarizing the number and area of glaciers in
+    each category.
+
+    """
+
+    cats = [0, 1, 2, 3, 98, 99]
+
+    regions = []
+    names = []
+    totals = []
+
+    cat_dict = {'cat0': [], 'cat0area': [],
+                'cat1': [], 'cat1area': [],
+                'cat2': [], 'cat2area': [],
+                'cat3': [], 'cat3area': [],
+                'cat98': [], 'cat98area': [],
+                'cat99': [], 'cat99area': []}
+
+    for region in rgi_regions:
+        fn_csv = region + '_lakeflag.csv'
+
+        num, name = region.split('-')[-1].split('_', maxsplit=1)
+
+        lakeflags = pd.read_csv(Path('dataset', 'csv', fn_csv))
+        outlines = gpd.read_file(rgi_loader('rgi', region))
+
+        lakeflags = lakeflags.merge(outlines[['rgi_id', 'area_km2']], left_on='rgi_id', right_on='rgi_id')
+
+        regions.append(int(num))
+        names.append(' '.join(name.split('_')).title())
+        totals.append(len(lakeflags))
+
+        counts = lakeflags['lake_cat'].value_counts()
+        for cat in cats:
+            if cat in counts.index:
+                area = lakeflags.loc[lakeflags['lake_cat'] == cat, 'area_km2'].sum()
+
+                cat_dict[f"cat{cat}"].append(counts.loc[cat])
+                cat_dict[f"cat{cat}area"].append(area)
+            else:
+                cat_dict[f"cat{cat}"].append(0)
+                cat_dict[f"cat{cat}area"].append(0)
+
+    global_counts = pd.DataFrame(data={'region': regions, 'name': names, 'numglac': totals} | cat_dict)
+
+    global_counts.set_index('region', inplace=True)
+    total = global_counts.sum(numeric_only=True)
+    total['name'] = ''
+
+    global_counts.loc['global'] = total
+
+    count_cols = ['numglac'] + [f"cat{cat}" for cat in cats]
+    global_counts[count_cols] = global_counts[count_cols].astype(int)
+
+    global_counts.to_csv(Path('dataset', 'regional_summary.csv'))
