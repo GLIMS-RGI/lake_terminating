@@ -1,17 +1,14 @@
 from pathlib import Path
-from glob import glob
 import pandas as pd
 import geopandas as gpd
 import tools
 
 
-regions = [fn.split('_lakeflag.csv')[0] for fn in sorted(glob('*lakeflag.csv', root_dir='tables'))]
-
-for reg in regions:
+for reg in tools.rgi_regions:
     print(reg)
     failed = False
 
-    lakeflags = pd.read_csv(Path('tables', reg + '_lakeflag.csv'))
+    lakeflags = pd.read_csv(Path('dataset', 'csv', f"{reg}_lakeflag.csv"))
 
     if 'term_type' in lakeflags:
         # term_type has already been added to the csv, so we can continue
@@ -53,5 +50,4 @@ for reg in regions:
         lakeflags.loc[not_set & is_lake, 'term_type'] = 2 # set lake-terminating
         lakeflags.loc[not_set & is_shelf, 'term_type'] = 3 # set shelf-terminating
 
-        lakeflags.to_csv(Path('tables', reg + '_lakeflag.csv'), index=False)
-
+        lakeflags.to_csv(Path('dataset', 'csv', f"{reg}_lakeflag.csv"), index=False)
