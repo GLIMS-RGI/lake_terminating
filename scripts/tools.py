@@ -45,15 +45,20 @@ def rgi_loader(rgi_dir: Union[str, Path], rgi_reg: Union[str, Path]) -> Path:
         raise FileNotFoundError(f"Unable to find {rgi_reg}.shp in {rgi_dir}, or a sub-directory. Please check path and filename.")
 
 
-def generate_geopackage() -> None:
+def generate_geopackage(regions: Union[None, list] = None) -> None:
     """
     For each RGI region, create two additional datasets:
 
     - dataset/lakeflags/{region}_lakeflag.gpkg, with the lakeflag CSV joined to the RGI7 centroid (all glaciers)
     - dataset/outlines/{region}_laketerminating.gpkg, with outlines for lake category 1-3.
+
+    :param regions: The list of regions to update. If None, updates all files.
     """
 
-    for region in tqdm(rgi_regions):
+    if regions is None:
+        regions = rgi_regions
+
+    for region in tqdm(regions):
         fn_csv = region + '_lakeflag.csv'
 
         lakeflags = pd.read_csv(Path('dataset', 'csv', fn_csv))
