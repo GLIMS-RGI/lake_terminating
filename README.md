@@ -72,6 +72,37 @@ Additionally, the `contributor_files/` may have an additional field, `auto_term`
 The `.gpkg` files contained in the `lakeflags/` and `outlines/` directories are generated from the `.csv` files and the
 RGI outlines using `scripts/generate_geopackage.py`.
 
+## Scripts
+
+The repository has a number of scripts that can be used to update or work with the dataset. To be able to run any of the
+scripts, you will first need to create a [conda]() environment using the `environment.yml` file found in the repository.
+
+The following scripts are found in the `scripts/` folder:
+
+- `test_submission.py`: this script contains a number of tests that can be run with `pytest` to check that any new or
+  updated files in `dataset/contributor_files` or `dataset/csv` match the formatting of the dataset.
+- `update_dataset.py`: this script can be used to update the dataset with any new or revised files found in
+  `dataset/contributor_files`. The script first checks for any conflicts (glaciers with multiple `lake_cat` values). If
+  there are conflicts, these need to be resolved by editing the `{region}_conflicts.csv` file(s) created and changing 
+  the conflicting `lake_cat` values to an agreed value, and the script then needs to be run again. Once all conflicts
+  have been resolved, the script updates the geopackage files, and re-creates `dataset/summary_table.csv` with the
+  updated number and area of lake-terminating glaciers. At this point, the updated files can be committed and merged
+  using a [pull request](https://github.com/GLIMS-RGI/lake_terminating/pulls). For more information about how to use 
+  the script, run `python scripts/update_dataset.py -h` from within the `conda` environment.
+- `assign_lake_flag.py`: can be used with a lake inventory to identify glaciers that have a lake within some buffer
+  around the terminus. For more information about how to use the script, run `python scripts/assign_lake_flag.py -h`
+  from within the `conda` environment, or see the "Workflow using existing lake inventory" section below.
+- `assign_term_type.py`: this script can be used to update the RGI v7.0 `term_type` attribute, using the files found
+  in `dataset/csv`. Glaciers with a `lake_cat` of 2 or 3 will be assigned a `term_type` of 2 (lake-terminating), while
+  glaciers with a `lake_cat` of 0 or 1 will be assigned a `term_type` of 0 (land-terminating). The updated .csv files
+  can then be joined to the RGI shapefiles.
+- `generate_geopackage.py`: re-generates the geopackage files for each region.
+- `summary_table.py`: re-creates `dataset/summary_table.csv` based on the files in `dataset/csv`.
+- `finalize_csv.py`: converts the attribute table from a shapefile used for mapping into a .csv file that is compatible
+  with the dataset. For more information about how to use the script, run `python scripts/finalize_csv.py -h`
+  from within the `conda` environment.
+
+
 ## Contributing
 
 The classifications provided here are the result of a community effort, which means that there may be disagreement 
@@ -168,7 +199,7 @@ lake-terminating.
 outlines are shown in white. (a) Eklutna Glacier (RGI2000-v7.0-G-01-10928) in Alaska. Landsat image acquired 1999-07-31.
 (b) Unnamed glacier (RGI2000-v7.0-G-01-11048) in Alaska (region 01). Landsat image acquired 1999-07-31. (c) Harris
 Glacier (RGI2000-v7.0-G-01-08628) in Alaska (region 01). Landsat image acquired 2000-08-09. (d) Hispar Glacier, with 
-numerous supraglacial ponds (RGI2000-v7.0-G-14-21670) in South Asia West (region 14). Landsat image acquired 2000-09-11.
+numerous supraglacial ponds (RGI2000-v7.0-G-14-21670) in South Asia West (region 14). Landsat image acquired 2000-09-11.*
 
 ### Ambiguous lake termini
 
@@ -202,7 +233,7 @@ includes exclusively glaciers that are definitely not lake-terminating is helpfu
 
 ### Workflow using existing lake inventory
 
-We have provided a Python script (`scripts/assign_flag.py`) that utilizes an existing ice-marginal 
+We have provided a Python script (`scripts/assign_lake_flag.py`) that utilizes an existing ice-marginal 
 lake inventory to produce a limited subset of RGI glaciers that should be manually verified for lake-terminating status.
 
 We have compiled a list of known [datasets here](https://github.com/GLIMS-RGI/lake_terminating/blob/main/Lake_databases_termini.csv).
