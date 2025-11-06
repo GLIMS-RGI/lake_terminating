@@ -80,6 +80,8 @@ def _merge_contributions(region, updates):
         combined = pd.concat([region_file] + [pd.read_csv(fn) for fn in updates],
                              ignore_index=True).sort_values('rgi_id').reset_index(drop=True)
 
+    combined['contributor'] = combined['contributor'].astype(str)
+
     missing = outlines[~outlines['rgi_id'].isin(combined['rgi_id'])]
     if len(missing) > 0:
         print(f"Found {len(missing)} glaciers not included in contributions. Saving to {region}_missing.gpkg")
