@@ -14,7 +14,7 @@ def convert_landsat_bands(granule):
     with open(Path(granule, granule + '_MTL.json'), 'r') as f:
         metadata = json.load(f)
     
-    for bn in [2, 3, 4, 8]:
+    for bn in [3, 4, 5, 8]:
         band = gu.Raster(Path(granule, granule + f"_B{bn}.TIF"))
         band *= float(metadata['LANDSAT_METADATA_FILE']['LEVEL1_RADIOMETRIC_RESCALING'][f"REFLECTANCE_MULT_BAND_{bn}"])
         band += float(metadata['LANDSAT_METADATA_FILE']['LEVEL1_RADIOMETRIC_RESCALING'][f"REFLECTANCE_ADD_BAND_{bn}"])
@@ -37,7 +37,7 @@ for tarball in tarballs:
 
     gdal_pansharpen(
         pan_name=os.path.join(gran, 'B8.tif'),
-        spectral_names=[os.path.join(gran, f"B{bn}.tif") for bn in [4, 3, 2]],
+        spectral_names=[os.path.join(gran, f"B{bn}.tif") for bn in [5, 4, 3]],
         dst_filename=f"{gran}_pan.tif"
     )
 

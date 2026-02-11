@@ -49,12 +49,12 @@ ax2 = ax.twinx()
 ax.hist(outlines['src_date'].dt.year, bins, density=True, label='RGI7 Outline', color='#7a0177', alpha=0.6)
 ax.hist(lake_flags['image_date'].dt.year, bins, density=True,
         #label=f"Lake Level ({100*ptag:.2f}%)", color='#1f78b4', alpha=0.6)
-        label=f"Lake Level", color='#1f78b4', alpha=0.6)
+        label=f"Lake-terminating Category", color='#1f78b4', alpha=0.6)
 
 ax2.step(np.array(bins[:-1]), out_freq, label='RGI7 Outline', color='#7a0177', lw=2)
 ax2.step(np.array(bins[:-1]), lake_freq, label='RGI7 Outline', color='#1f78b4', lw=2)
 
-ax.legend(loc='upper left')
+ax.legend(loc='upper left', fontsize=12)
 ax.set_xlabel('Year')
 ax.set_ylabel('Frequency')
 

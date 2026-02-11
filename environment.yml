@@ -10,3 +10,6 @@ dependencies:
   - squarify
   - geoutils
   - cartopy
+  - pytest
+  - gitpython
+  - delayed-assert

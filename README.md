@@ -1,5 +1,7 @@
 # Global lake-terminating glacier classification: a community effort for the Randolph Glacier Inventory (RGI) and beyond
 
+[![DOI](https://zenodo.org/badge/764141248.svg)](https://zenodo.org/badge/latestdoi/764141248)
+
 Written by William Armstrong and Tobias Bolch with contributions from Robert McNabb, Rodrigo Aguayo, Fabien Maussion, 
 Jakob Steiner, and Will Kochtitzky
 
@@ -62,16 +64,72 @@ Each of the files in the dataset folders contains the following fields:
 - `contributor` - the ID of the contributor(s) who classified the glacier
 - `notes` - any additional notes from each contributor
 
+Additionally, the `contributor_files/` may have an additional field, `auto_term`. When running
+`scripts/finalize_csv.py`, the column `term_type` (if included in the CSV) is renamed to `auto_term` to indicate that
+`scripts/assign_lake_flag.py` was run and there was an inventory lake within the buffer around the terminus 
+(`auto_term == 2`)
+
 The `.gpkg` files contained in the `lakeflags/` and `outlines/` directories are generated from the `.csv` files and the
 RGI outlines using `scripts/generate_geopackage.py`.
+
+## Scripts
+
+The repository has a number of scripts that can be used to update or work with the dataset. To be able to run any of the
+scripts, you will first need to create a [conda]() environment using the `environment.yml` file found in the repository.
+
+The following scripts are found in the `scripts/` folder:
+
+- `test_submission.py`: this script contains a number of tests that can be run with `pytest` to check that any new or
+  updated files in `dataset/contributor_files` or `dataset/csv` match the formatting of the dataset.
+- `update_dataset.py`: this script can be used to update the dataset with any new or revised files found in
+  `dataset/contributor_files`. The script first checks for any conflicts (glaciers with multiple `lake_cat` values). If
+  there are conflicts, these need to be resolved by editing the `{region}_conflicts.csv` file(s) created and changing 
+  the conflicting `lake_cat` values to an agreed value, and the script then needs to be run again. Once all conflicts
+  have been resolved, the script updates the geopackage files, and re-creates `dataset/summary_table.csv` with the
+  updated number and area of lake-terminating glaciers. At this point, the updated files can be committed and merged
+  using a [pull request](https://github.com/GLIMS-RGI/lake_terminating/pulls). For more information about how to use 
+  the script, run `python scripts/update_dataset.py -h` from within the `conda` environment.
+- `assign_lake_flag.py`: can be used with a lake inventory to identify glaciers that have a lake within some buffer
+  around the terminus. For more information about how to use the script, run `python scripts/assign_lake_flag.py -h`
+  from within the `conda` environment, or see the "Workflow using existing lake inventory" section below.
+- `assign_term_type.py`: this script can be used to update the RGI v7.0 `term_type` attribute, using the files found
+  in `dataset/csv`. Glaciers with a `lake_cat` of 2 or 3 will be assigned a `term_type` of 2 (lake-terminating), while
+  glaciers with a `lake_cat` of 0 or 1 will be assigned a `term_type` of 0 (land-terminating). The updated .csv files
+  can then be joined to the RGI shapefiles.
+- `generate_geopackage.py`: re-generates the geopackage files for each region.
+- `summary_table.py`: re-creates `dataset/summary_table.csv` based on the files in `dataset/csv`.
+- `finalize_csv.py`: converts the attribute table from a shapefile used for mapping into a .csv file that is compatible
+  with the dataset. For more information about how to use the script, run `python scripts/finalize_csv.py -h`
+  from within the `conda` environment.
+
 
 ## Contributing
 
 The classifications provided here are the result of a community effort, which means that there may be disagreement 
-between analysts. If you find any such issues, we invite you to submit your updates/corrections by first forking this
-repository and submitting a Pull Request (https://github.com/GLIMS-RGI/lake_terminating/pulls).
+between analysts. If you find any such issues, we invite you to submit your updates/corrections in one of the following
+ways, depending on your level of comfort with git/GitHub:
 
-Alternatively, you are welcome to open an issue for further discussion (https://github.com/GLIMS-RGI/lake_terminating/issues). 
+### through GitHub 
+
+1. Open an issue (https://github.com/GLIMS-RGI/lake_terminating/issues) for further discussion;
+2. Fork this repository, make your changes/updates, and open a Pull Request
+   (https://github.com/GLIMS-RGI/lake_terminating/pulls). **Please Note**: if you choose this option, ensure
+   that your updated files are placed in the relevant regional folder in `dataset/contributor_files`, rather than
+   updating the files in `dataset/csv` directly.
+
+As part of the PR process, any updated CSV files will be checked for formatting consistency. Once those checks have
+passed, the updates can be merged using the process outlined by `scripts/update_dataset.py`.
+
+You are welcome to make these changes yourself; alternatively, one of the maintainers will be able to do the final
+merge/update.
+
+### outside of GitHub
+
+Outside of GitHub, you are welcome to contact one or more of the maintainers to discuss any issues or to send along
+your proposed updates/corrections. 
+
+Please ensure that your submitted CSV file uses the same format as is found in the `lake_term_data_template.csv`
+file found in this repository, as it will greatly simplify the integration process.
 
 ## 1. Definition and categories of lake-terminating glaciers
 
@@ -136,12 +194,12 @@ that have not amalgamated to form one lake spanning the majority of the glacierâ
 Similarly, we did not consider glaciers with proglacial water bodies smaller than 0.01 km<sup>2</sup> to be 
 lake-terminating.
 
-![Fig4_Level_0_Examples.png](essd/figures/Fig4_Category_0_Examples.png)
+![](essd/figures/Fig4_Category_0_Examples.png)
 *Background images are Landsat 7 ETM+ false-color composites (bands 5, 4, 3). RGI7 outlines are shown in red, while lake
 outlines are shown in white. (a) Eklutna Glacier (RGI2000-v7.0-G-01-10928) in Alaska. Landsat image acquired 1999-07-31.
 (b) Unnamed glacier (RGI2000-v7.0-G-01-11048) in Alaska (region 01). Landsat image acquired 1999-07-31. (c) Harris
 Glacier (RGI2000-v7.0-G-01-08628) in Alaska (region 01). Landsat image acquired 2000-08-09. (d) Hispar Glacier, with 
-numerous supraglacial ponds (RGI2000-v7.0-G-14-21670) in South Asia West (region 14). Landsat image acquired 2000-09-11.
+numerous supraglacial ponds (RGI2000-v7.0-G-14-21670) in South Asia West (region 14). Landsat image acquired 2000-09-11.*
 
 ### Ambiguous lake termini
 
@@ -175,7 +233,7 @@ includes exclusively glaciers that are definitely not lake-terminating is helpfu
 
 ### Workflow using existing lake inventory
 
-We have provided a Python script (`scripts/assign_flag.py`) that utilizes an existing ice-marginal 
+We have provided a Python script (`scripts/assign_lake_flag.py`) that utilizes an existing ice-marginal 
 lake inventory to produce a limited subset of RGI glaciers that should be manually verified for lake-terminating status.
 
 We have compiled a list of known [datasets here](https://github.com/GLIMS-RGI/lake_terminating/blob/main/Lake_databases_termini.csv).
@@ -228,7 +286,7 @@ The contributors to the lake inventory should provide a csv file with the follow
 
 | `rgi_id`                | `lake_cat` |                `image_id`                | `image_date` |          `inventory_doi`           | `contributor` |
 |-------------------------|:----------:|:----------------------------------------:|:------------:|:----------------------------------:|:-------------:|
-| RGI2000-v7.0-G-01-08604 |     1      | LT05_L1TP_066017_19990927_20200907_02_T1 | 1999/09/27   | https://doi.org/10.18739/A2MK6591G |  Armstrong    |
+| RGI2000-v7.0-G-01-08604 |     3      | LT05_L1TP_066017_19990927_20200907_02_T1 |  1999-09-27  | https://doi.org/10.18739/A2MK6591G |  Armstrong    |
 
 The fields are defined as:
 
